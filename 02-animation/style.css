@@ -1,8 +1,8 @@
 :root {
   --square-size: 60px;
   --color-main: springgreen;
+  --color-second: darkorange;
 }
-
 body {
   letter-spacing: 1.5px;
   padding: 1rem 4rem;
@@ -55,25 +55,24 @@ h4 {
   margin-bottom: 20px;
 }
 
-
 /* ///////////////////////////////////////////////// */
 /* ---------------- NECESSARY TASKS ---------------- */
 /* ///////////////////////////////////////////////// */
 /* required tasks 2, 3, 4, 6,  9, 11 */
 .square-2 {
-  animation-name: move_left-to-right;
+  animation-name: move_right-80;
   animation-duration: 4s;
   animation-iteration-count: infinite;
 }
 .square-3 {
-  width: 150px;
-  height: 150px;
+  width: 200px;
+  height: 200px;
   animation-name: fill_equal;
   animation-duration: 4s;
   animation-iteration-count: infinite;
 }
 .animation-4 {
-  height: 300px;
+  height: 500px;
 }
 .square-4 {
   animation-name: move_square-way;
@@ -82,7 +81,7 @@ h4 {
   animation-iteration-count: infinite;
 }
 .square-6 {
-  animation-name: move_forth-back;
+  animation-name: move_right-60;
   animation-duration: 2.5s;
   animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
@@ -118,11 +117,78 @@ h4 {
 /* ---------------- REST TASKS ---------------- */
 /* //////////////////////////////////////////// */
 
+.square-1 {
+  animation-name: move_right-80;
+  animation-duration: 4s;
+  animation-timing-function: ease;
+  animation-iteration-count: 3;
+}
+
+.animation-5 {
+  height: 500px;
+}
+.square-5 {
+  animation-name: move_square-way, fill_equal;
+  animation-duration: 8s, 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: normal, alternate;
+}
+
+.square-7 {
+  animation-name: move_right-60;
+  animation-duration: 2.5s;
+  animation-timing-function: ease;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+.square-8 {
+  height: 30px;
+  width: 250px;
+  position: relative;
+}
+.square-8__filler {
+  height: 100%;
+  background-color: var(--color-main);
+  animation-name: fill_gradually;
+  animation-duration: 7s;
+  animation-timing-function: linear;
+}
+.square-10 {
+  height: 40px;
+  width: 10%;
+  animation-name: stretch_horizontal;
+  animation-duration: 2.5s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-play-state: paused;
+}
+.square-10:hover {
+  animation-play-state: running;
+}
+.square-12 {
+  height: 250px;
+  width: 250px;
+  margin: 0 auto;
+}
+
+.ball {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background: var(--color-second);
+
+  animation-name: move_right-50, falling;
+  animation-duration: 4.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
 /* /////////////////////////////////////////////////// */
 /* ---------------- CUSTOM ANIMATIONS ---------------- */
 /* /////////////////////////////////////////////////// */
 
-@keyframes move_left-to-right {
+@keyframes move_right-80 {
   0% {
     margin-left: 0%;
   }
@@ -131,7 +197,7 @@ h4 {
     transform: translateX(-100%);
   }
 }
-@keyframes move_forth-back {
+@keyframes move_right-60 {
   0% {
     margin-left: 0%;
   }
@@ -140,22 +206,35 @@ h4 {
     transform: translateX(-100%);
   }
 }
+@keyframes move_right-50 {
+  0% {
+    margin-left: 0%;
+  }
+  100% {
+    margin-left: 50%;
+  }
+}
 
 @keyframes move_square-way {
   0% {
-    transform: translate(0, 0);
+    margin-top: 0%;
+    margin-left: 0%;
   }
   25% {
-    transform: translate(450px, 0);
+    margin-top: 0%;
+    margin-left: 800px;
   }
   50% {
-    transform: translate(450px, 225px);
+    margin-top: 400px;
+    margin-left: 800px;
   }
   75% {
-    transform: translate(0, 225px);
+    margin-top: 400px;
+    margin-left: 0%;
   }
   100% {
-    transform: translate(0, 0);
+    margin-top: 0%;
+    margin-left: 0%;
   }
 }
 
@@ -182,5 +261,48 @@ h4 {
   }
   100% {
     width: 100%;
+  }
+}
+
+@keyframes falling {
+  0% {
+    margin-top: 0;
+    transform: translateY(0%);
+    animation-timing-function: ease-in;
+  }
+  40% {
+    margin-top: 100%;
+    transform: translateY(-100%);
+    animation-timing-function: ease-out;
+  }
+  55% {
+    margin-top: 70%;
+    transform: translateY(0%);
+    animation-timing-function: ease-in;
+  }
+  70% {
+    margin-top: 100%;
+    transform: translateY(-100%);
+    animation-timing-function: ease-out;
+  }
+  80% {
+    margin-top: 83%;
+    transform: translateY(0%);
+    animation-timing-function: ease-in;
+  }
+  90% {
+    margin-top: 100%;
+    transform: translateY(-100%);
+    animation-timing-function: ease-out;
+  }
+  95% {
+    margin-top: 90%;
+    transform: translateY(0%);
+    animation-timing-function: ease-in;
+  }
+  100% {
+    margin-top: 98%;
+    transform: translateY(-100%);
+    animation-timing-function: ease-out;
   }
 }
