@@ -54,3 +54,133 @@ h4 {
   border-radius: 3px;
   margin-bottom: 20px;
 }
+
+
+/* ///////////////////////////////////////////////// */
+/* ---------------- NECESSARY TASKS ---------------- */
+/* ///////////////////////////////////////////////// */
+/* required tasks 2, 3, 4, 6,  9, 11 */
+.square-2 {
+  animation-name: move_left-to-right;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+}
+.square-3 {
+  width: 150px;
+  height: 150px;
+  animation-name: fill_equal;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+}
+.animation-4 {
+  height: 300px;
+}
+.square-4 {
+  animation-name: move_square-way;
+  animation-duration: 10s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+.square-6 {
+  animation-name: move_forth-back;
+  animation-duration: 2.5s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+.square-9 {
+  height: 30px;
+  width: 250px;
+  position: relative;
+}
+.square-9__filler {
+  height: 100%;
+  background-color: var(--color-main);
+  animation-name: fill_gradually;
+  animation-duration: 10s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+.square-11 {
+  height: 40px;
+  width: 10%;
+  animation-name: stretch_horizontal;
+  animation-duration: 2.5s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-play-state: paused;
+}
+.trigger-11:hover + .square-11 {
+  animation-play-state: running;
+}
+
+/* //////////////////////////////////////////// */
+/* ---------------- REST TASKS ---------------- */
+/* //////////////////////////////////////////// */
+
+/* /////////////////////////////////////////////////// */
+/* ---------------- CUSTOM ANIMATIONS ---------------- */
+/* /////////////////////////////////////////////////// */
+
+@keyframes move_left-to-right {
+  0% {
+    margin-left: 0%;
+  }
+  100% {
+    margin-left: 80%;
+    transform: translateX(-100%);
+  }
+}
+@keyframes move_forth-back {
+  0% {
+    margin-left: 0%;
+  }
+  100% {
+    margin-left: 60%;
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes move_square-way {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(450px, 0);
+  }
+  50% {
+    transform: translate(450px, 225px);
+  }
+  75% {
+    transform: translate(0, 225px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes fill_equal {
+  0% {
+    background-color: transparent;
+  }
+  100% {
+    background-color: var(--color-main);
+  }
+}
+@keyframes fill_gradually {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes stretch_horizontal {
+  0% {
+    width: 10%;
+  }
+  100% {
+    width: 100%;
+  }
+}
