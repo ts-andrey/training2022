@@ -1,0 +1,308 @@
+:root {
+  --square-size: 60px;
+  --color-main: springgreen;
+  --color-second: darkorange;
+}
+body {
+  letter-spacing: 1.5px;
+  padding: 1rem 4rem;
+  background-color: #000;
+}
+
+.wrapper {
+  margin: 0 auto;
+  padding: 2rem;
+  max-width: 1000px;
+  box-sizing: content-box;
+  background-color: #fff;
+  border-radius: 15px;
+}
+
+h1 {
+  font-size: 70px;
+  letter-spacing: 4px;
+}
+h2 {
+  font-size: 48px;
+  letter-spacing: 3px;
+  color: darkorchid;
+}
+h4 {
+  font-size: 25px;
+  letter-spacing: 2px;
+  color: cornflowerblue;
+}
+
+.animation {
+  border: 2px dotted #000;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.square {
+  height: var(--square-size);
+  width: var(--square-size);
+  border: 2px solid var(--color-main);
+  border-radius: 2px;
+}
+
+.trigger {
+  width: fit-content;
+  padding: 0.5rem 2rem;
+
+  border: 1px solid cadetblue;
+  border-radius: 3px;
+  margin-bottom: 20px;
+}
+
+/* ///////////////////////////////////////////////// */
+/* ---------------- NECESSARY TASKS ---------------- */
+/* ///////////////////////////////////////////////// */
+/* required tasks 2, 3, 4, 6,  9, 11 */
+.square-2 {
+  animation-name: move_right-80;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+}
+.square-3 {
+  width: 200px;
+  height: 200px;
+  animation-name: fill_equal;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+}
+.animation-4 {
+  height: 500px;
+}
+.square-4 {
+  animation-name: move_square-way;
+  animation-duration: 10s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+.square-6 {
+  animation-name: move_right-60;
+  animation-duration: 2.5s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+.square-9 {
+  height: 30px;
+  width: 250px;
+  position: relative;
+}
+.square-9__filler {
+  height: 100%;
+  background-color: var(--color-main);
+  animation-name: fill_gradually;
+  animation-duration: 10s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+.square-11 {
+  height: 40px;
+  width: 10%;
+  animation-name: stretch_horizontal;
+  animation-duration: 2.5s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-play-state: paused;
+}
+.trigger-11:hover + .square-11 {
+  animation-play-state: running;
+}
+
+/* //////////////////////////////////////////// */
+/* ---------------- REST TASKS ---------------- */
+/* //////////////////////////////////////////// */
+
+.square-1 {
+  animation-name: move_right-80;
+  animation-duration: 4s;
+  animation-timing-function: ease;
+  animation-iteration-count: 3;
+}
+
+.animation-5 {
+  height: 500px;
+}
+.square-5 {
+  animation-name: move_square-way, fill_equal;
+  animation-duration: 8s, 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: normal, alternate;
+}
+
+.square-7 {
+  animation-name: move_right-60;
+  animation-duration: 2.5s;
+  animation-timing-function: ease;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+.square-8 {
+  height: 30px;
+  width: 250px;
+  position: relative;
+}
+.square-8__filler {
+  height: 100%;
+  background-color: var(--color-main);
+  animation-name: fill_gradually;
+  animation-duration: 7s;
+  animation-timing-function: linear;
+}
+.square-10 {
+  height: 40px;
+  width: 10%;
+  animation-name: stretch_horizontal;
+  animation-duration: 2.5s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-play-state: paused;
+}
+.square-10:hover {
+  animation-play-state: running;
+}
+.square-12 {
+  height: 250px;
+  width: 250px;
+  margin: 0 auto;
+}
+
+.ball {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background: var(--color-second);
+
+  animation-name: move_right-50, falling;
+  animation-duration: 4.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+/* /////////////////////////////////////////////////// */
+/* ---------------- CUSTOM ANIMATIONS ---------------- */
+/* /////////////////////////////////////////////////// */
+
+@keyframes move_right-80 {
+  0% {
+    margin-left: 0%;
+  }
+  100% {
+    margin-left: 80%;
+    transform: translateX(-100%);
+  }
+}
+@keyframes move_right-60 {
+  0% {
+    margin-left: 0%;
+  }
+  100% {
+    margin-left: 60%;
+    transform: translateX(-100%);
+  }
+}
+@keyframes move_right-50 {
+  0% {
+    margin-left: 0%;
+  }
+  100% {
+    margin-left: 50%;
+  }
+}
+
+@keyframes move_square-way {
+  0% {
+    margin-top: 0%;
+    margin-left: 0%;
+  }
+  25% {
+    margin-top: 0%;
+    margin-left: 800px;
+  }
+  50% {
+    margin-top: 400px;
+    margin-left: 800px;
+  }
+  75% {
+    margin-top: 400px;
+    margin-left: 0%;
+  }
+  100% {
+    margin-top: 0%;
+    margin-left: 0%;
+  }
+}
+
+@keyframes fill_equal {
+  0% {
+    background-color: transparent;
+  }
+  100% {
+    background-color: var(--color-main);
+  }
+}
+@keyframes fill_gradually {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes stretch_horizontal {
+  0% {
+    width: 10%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes falling {
+  0% {
+    margin-top: 0;
+    transform: translateY(0%);
+    animation-timing-function: ease-in;
+  }
+  40% {
+    margin-top: 100%;
+    transform: translateY(-100%);
+    animation-timing-function: ease-out;
+  }
+  55% {
+    margin-top: 70%;
+    transform: translateY(0%);
+    animation-timing-function: ease-in;
+  }
+  70% {
+    margin-top: 100%;
+    transform: translateY(-100%);
+    animation-timing-function: ease-out;
+  }
+  80% {
+    margin-top: 83%;
+    transform: translateY(0%);
+    animation-timing-function: ease-in;
+  }
+  90% {
+    margin-top: 100%;
+    transform: translateY(-100%);
+    animation-timing-function: ease-out;
+  }
+  95% {
+    margin-top: 90%;
+    transform: translateY(0%);
+    animation-timing-function: ease-in;
+  }
+  100% {
+    margin-top: 98%;
+    transform: translateY(-100%);
+    animation-timing-function: ease-out;
+  }
+}
