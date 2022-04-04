@@ -1,0 +1,21 @@
+{
+  "name": "npm-overview",
+  "version": "1.0.0",
+  "description": "overview of npm",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "js-minify": "uglifyjs --compress --mangle --output ./npm-overview/index.mini.js -- ./npm-overview/index.js",
+    "build:sass": "sass ./npm-overview/style.scss ./npm-overview/style.css",
+    "watch:sass": "sass ./npm-overview/style.scss ./npm-overview/style.css -w"
+  },
+  "author": "Andrei Tsakunou",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.49.11",
+    "uglify-js": "^3.15.3"
+  },
+  "dependencies": {
+    "uniqolor": "^1.0.2"
+  }
+}
