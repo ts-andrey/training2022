@@ -1,0 +1,94 @@
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  box-sizing: border-box;
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  border: none;
+  outline: none;
+}
+
+.header {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 0;
+  letter-spacing: 1px;
+  position: relative;
+
+  &__header {
+    font-size: 50px;
+    margin-bottom: 30px;
+  }
+
+  &__btn-wrapper {}
+
+  &__btn {
+    background-color: #000;
+    color: #fff;
+    padding: 5px 15px;
+    border-radius: 5px;
+
+
+    &-bg {
+      margin-right: 20px;
+    }
+  }
+}
+
+.main {
+  flex-grow: 1;
+  margin: 0;
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  letter-spacing: 2px;
+
+  &__header {
+    font-size: 80px;
+    text-align: center;
+    line-height: 100%;
+  }
+}
+
+.footer {
+  background-color: rgb(255, 156, 121);
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  letter-spacing: 1px;
+
+  &__gitLink {
+    background-color: #000;
+    padding: .2rem 1rem;
+    border-radius: 10px;
+    color: #fff;
+    transition: all .3s;
+
+    &:hover {
+      color: coral;
+    }
+  }
+}
