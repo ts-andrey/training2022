@@ -1,6 +1,7 @@
 // --------------------------------------------------- VARIABLES --------------------------------------------------- //
 $content-width: 1300px;
 $color-text:#60606E;
+$background-main: #7beec7;
 
 // --------------------------------------------------- UTIL CLASSES --------------------------------------------------- //
 .center-horizontal {
@@ -114,6 +115,10 @@ a {
   &__service {
     margin-bottom: 150px;
   }
+
+  &__pricing {
+    margin-bottom: 119px;
+  }
 }
 
 .about {
@@ -214,6 +219,121 @@ a {
 
     &_bulb {
       width: 53px;
+    }
+  }
+}
+
+// --------------------------------------------------- PRICING --------------------------------------------------- //
+
+.pricing {
+
+  &__description-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 100px;
+  }
+
+  &__description-header-wrapper {
+    width: fit-content;
+    position: relative;
+  }
+
+  &__description-header {
+    font-size: 30px;
+    text-transform: uppercase;
+    margin-bottom: 29px;
+  }
+
+  &__icon-base {
+    position: absolute;
+    top: 17px;
+    z-index: -1;
+  }
+
+  &__description {
+    width: 717px;
+  }
+
+  &__list {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__item {
+    padding: 40px 30px;
+    transition: all .3s;
+    position: relative;
+
+    &_top-line {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 6px;
+      width: 100%;
+      background: $background-main;
+    }
+
+    &_top-corner {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 16px;
+      width: 16px;
+      background: linear-gradient(45deg, transparent 0%, transparent 49%, $background-main 50%, $background-main 100%);
+    }
+
+    &:hover {
+      box-shadow: 0 0 40px #60606e54;
+    }
+  }
+}
+
+.price-item {
+  &__header {
+    font-size: 30px;
+    text-transform: uppercase;
+    margin-bottom: 17px;
+  }
+
+  &__price {
+    color: #fff;
+    text-transform: uppercase;
+    padding: 9.5px 21.5px;
+    background: $background-main;
+    margin-bottom: 49px;
+  }
+
+  &__feature-list {
+    margin-bottom: 51px;
+  }
+
+  &__feature-item {
+    width: 360px;
+    margin-bottom: 15px;
+
+
+  }
+
+  &__feature-img {
+    height: 11px;
+    width: 11px;
+    margin-right: 9px;
+  }
+
+  &__btn {
+    border: none;
+    outline: none;
+    color: #fff;
+    text-transform: uppercase;
+    padding: 20.5px 19.5px;
+    background: $background-main;
+
+    transition: all .3s;
+
+    &:hover {
+      cursor: pointer;
+      box-shadow: 0 0 10px #60606e54;
     }
   }
 }
