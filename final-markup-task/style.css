@@ -80,4 +80,56 @@ a {
   font-size: 36px;
 }
 
+.main {
+  padding-top: 150px;
+}
+.main__about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.about__header-wrapper {
+  width: fit-content;
+  position: relative;
+}
+.about__header {
+  margin-bottom: 29px;
+  font-size: 30px;
+  text-transform: uppercase;
+}
+.about__short-description {
+  margin-bottom: 100px;
+  width: 717px;
+}
+.about__long-description {
+  display: flex;
+}
+.about__icon-base {
+  position: absolute;
+  z-index: -1;
+  left: 0px;
+  top: 16px;
+}
+
+.long-description__text {
+  margin-bottom: 48px;
+}
+.long-description__list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+.long-description__item {
+  margin-bottom: 15px;
+}
+.long-description__item-img {
+  line-height: 11px;
+  height: 11px;
+  width: 11px;
+  margin-right: 9px;
+}
+.long-description__img {
+  margin-left: 36px;
+}
+
 /*# sourceMappingURL=style.css.map */
