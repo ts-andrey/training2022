@@ -99,6 +99,8 @@ a {
 
 // --------------------------------------------------- MAIN --------------------------------------------------- //
 
+// --------------------------------------------------- ABOUT --------------------------------------------------- //
+
 .main {
   padding-top: 150px;
 
@@ -106,6 +108,11 @@ a {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 150px;
+  }
+
+  &__service {
+    margin-bottom: 150px;
   }
 }
 
@@ -161,5 +168,52 @@ a {
 
   &__img {
     margin-left: 36px;
+  }
+}
+
+// --------------------------------------------------- SERVICE --------------------------------------------------- //
+
+.service {
+
+  &__list {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__header {
+    margin-bottom: 15px;
+  }
+
+  &__img {
+    margin-bottom: 15px;
+  }
+
+  &__description {
+    width: 223px;
+    text-align: center;
+    line-height: 2;
+  }
+
+  &__icon-base {
+    position: absolute;
+    top: 25px;
+    left: 75px;
+    z-index: -1;
+  }
+
+  &__icon {
+    height: fit-content;
+    width: 53px;
+
+    &_bulb {
+      width: 53px;
+    }
   }
 }

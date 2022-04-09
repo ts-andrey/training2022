@@ -87,6 +87,10 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 150px;
+}
+.main__service {
+  margin-bottom: 150px;
 }
 
 .about__header-wrapper {
@@ -130,6 +134,41 @@ a {
 }
 .long-description__img {
   margin-left: 36px;
+}
+
+.service__list {
+  display: flex;
+  justify-content: space-between;
+}
+.service__item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.service__header {
+  margin-bottom: 15px;
+}
+.service__img {
+  margin-bottom: 15px;
+}
+.service__description {
+  width: 223px;
+  text-align: center;
+  line-height: 2;
+}
+.service__icon-base {
+  position: absolute;
+  top: 25px;
+  left: 75px;
+  z-index: -1;
+}
+.service__icon {
+  height: fit-content;
+  width: 53px;
+}
+.service__icon_bulb {
+  width: 53px;
 }
 
 /*# sourceMappingURL=style.css.map */
