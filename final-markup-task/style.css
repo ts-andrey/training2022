@@ -53,6 +53,11 @@ a {
 .header-menu {
   width: 30px;
   height: 20px;
+  transition: all 0.3s;
+}
+.header-menu:hover > .header-menu__item {
+  cursor: pointer;
+  border-bottom: 1px solid #7beec7;
 }
 .header-menu__item {
   width: 100%;
@@ -266,7 +271,8 @@ a {
 }
 .price-item__btn:hover {
   cursor: pointer;
-  box-shadow: 0 0 10px rgba(96, 96, 110, 0.3294117647);
+  color: #60606E;
+  box-shadow: 2px 2px 4px #60606E;
 }
 
 .support__subscribe {
@@ -291,6 +297,12 @@ a {
   font-weight: bolder;
   background-color: #fff;
   color: #7beec7;
+  transition: all 0.3s;
+}
+.apply__btn:hover {
+  cursor: pointer;
+  color: #60606E;
+  box-shadow: 2px 2px 4px #60606E;
 }
 
 .subscribe__header {
@@ -328,6 +340,12 @@ a {
   font-weight: bolder;
   background: #7beec7;
   color: #fff;
+  transition: all 0.3s;
+}
+.subscribe__email-btn:hover {
+  cursor: pointer;
+  color: #60606E;
+  box-shadow: 2px 2px 4px #60606E;
 }
 
 .footer {
