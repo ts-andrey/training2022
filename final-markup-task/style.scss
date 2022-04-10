@@ -119,6 +119,12 @@ a {
   &__pricing {
     margin-bottom: 119px;
   }
+
+  &__support {
+    padding: 50px 83px;
+    background-color: $background-main;
+    display: flex;
+  }
 }
 
 .about {
@@ -335,5 +341,79 @@ a {
       cursor: pointer;
       box-shadow: 0 0 10px #60606e54;
     }
+  }
+}
+
+// --------------------------------------------------- SUPPORT --------------------------------------------------- //
+
+.support {
+
+  &__apply {}
+
+  &__subscribe {
+    margin-left: 98px;
+    padding: 20px 25px;
+    background-color: #fff;
+  }
+}
+
+.apply {
+  &__header {
+    width: 487px;
+    line-height: 1.5;
+    font-size: 30px;
+    text-transform: uppercase;
+    color: #fff;
+    margin-bottom: 29px;
+  }
+
+  &__btn {
+    border: none;
+    outline: none;
+    padding: 20px 32px;
+    text-transform: uppercase;
+    font-weight: bolder;
+    background-color: #fff;
+    color: $background-main;
+  }
+}
+
+.subscribe {
+  &__header {
+    width: 336px;
+    line-height: 1.4;
+    font-size: 24px;
+    text-transform: uppercase;
+  }
+
+  &__text {
+    margin-bottom: 29px;
+  }
+
+  &__email-wrapper {
+    display: flex;
+  }
+
+  &__email-input {
+    height: 51px;
+    padding: 21px 19px;
+    flex-grow: 1;
+    border: 1px solid #CDCDCD;
+
+    &::placeholder {
+      color: #CDCDCD;
+      text-transform: uppercase;
+    }
+  }
+
+  &__email-btn {
+    outline: none;
+    border: none;
+    height: 51px;
+    width: 136px;
+    text-transform: uppercase;
+    font-weight: bolder;
+    background: $background-main;
+    color: #fff;
   }
 }
