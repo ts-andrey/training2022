@@ -348,7 +348,6 @@ a {
 
 .support {
 
-  &__apply {}
 
   &__subscribe {
     margin-left: 98px;
@@ -399,10 +398,15 @@ a {
     padding: 21px 19px;
     flex-grow: 1;
     border: 1px solid #CDCDCD;
+    outline: none;
 
     &::placeholder {
       color: #CDCDCD;
       text-transform: uppercase;
+    }
+
+    &:focus {
+      border: 1px solid $color-text;
     }
   }
 
@@ -415,5 +419,57 @@ a {
     font-weight: bolder;
     background: $background-main;
     color: #fff;
+  }
+}
+
+// --------------------------------------------------- FOOTER --------------------------------------------------- //
+
+.footer {
+  padding: 49px 82px;
+
+  &__top-line {
+    display: flex;
+    justify-content: space-between;
+    text-transform: uppercase;
+    color: #9A9A9A;
+  }
+
+  &__nav-list {
+    display: flex;
+  }
+
+  &__nav-item {
+    &_dash {
+      margin: 0 15px;
+    }
+
+    &_link {
+      transition: all .3s;
+
+      &:hover {
+        cursor: pointer;
+        color: $background-main;
+      }
+    }
+  }
+
+
+  &__social-links {
+    margin-top: 29px;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__social-icon {
+    margin-left: 15px;
+    height: 16px;
+    width: fit-content;
+    fill: #999999;
+
+    transition: all .3s;
+    &:hover {
+      cursor: pointer;
+      fill: $background-main;
+    }
   }
 }

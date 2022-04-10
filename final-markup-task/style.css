@@ -310,10 +310,14 @@ a {
   padding: 21px 19px;
   flex-grow: 1;
   border: 1px solid #CDCDCD;
+  outline: none;
 }
 .subscribe__email-input::placeholder {
   color: #CDCDCD;
   text-transform: uppercase;
+}
+.subscribe__email-input:focus {
+  border: 1px solid #60606E;
 }
 .subscribe__email-btn {
   outline: none;
@@ -324,6 +328,45 @@ a {
   font-weight: bolder;
   background: #7beec7;
   color: #fff;
+}
+
+.footer {
+  padding: 49px 82px;
+}
+.footer__top-line {
+  display: flex;
+  justify-content: space-between;
+  text-transform: uppercase;
+  color: #9A9A9A;
+}
+.footer__nav-list {
+  display: flex;
+}
+.footer__nav-item_dash {
+  margin: 0 15px;
+}
+.footer__nav-item_link {
+  transition: all 0.3s;
+}
+.footer__nav-item_link:hover {
+  cursor: pointer;
+  color: #7beec7;
+}
+.footer__social-links {
+  margin-top: 29px;
+  display: flex;
+  justify-content: flex-end;
+}
+.footer__social-icon {
+  margin-left: 15px;
+  height: 16px;
+  width: fit-content;
+  fill: #999999;
+  transition: all 0.3s;
+}
+.footer__social-icon:hover {
+  cursor: pointer;
+  fill: #7beec7;
 }
 
 /*# sourceMappingURL=style.css.map */
