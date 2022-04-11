@@ -55,14 +55,17 @@ a {
   height: 20px;
   transition: all 0.3s;
 }
-.header-menu:hover > .header-menu__item {
+.header-menu:hover {
   cursor: pointer;
+}
+.header-menu:hover > .header-menu__item {
   border-bottom: 1px solid #7beec7;
 }
 .header-menu__item {
   width: 100%;
   border-bottom: 1px solid #60606E;
   margin-bottom: 6px;
+  transition: all 0.3s;
 }
 .header-menu__item:nth-of-type(1) {
   width: 31px;

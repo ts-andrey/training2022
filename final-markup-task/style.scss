@@ -67,8 +67,11 @@ a {
 
     transition: all .3s;
 
-    &:hover>&__item {
+    &:hover {
       cursor: pointer;
+    }
+
+    &:hover>&__item {
       border-bottom: 1px solid $background-main;
     }
 
@@ -76,6 +79,7 @@ a {
       width: 100%;
       border-bottom: 1px solid $color-text;
       margin-bottom: 6px;
+      transition: all .3s;
 
       &:nth-of-type(1) {
         width: 31px;
