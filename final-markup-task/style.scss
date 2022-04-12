@@ -1,11 +1,16 @@
 // --------------------------------------------------- VARIABLES --------------------------------------------------- //
-$content-width: 1300px;
+$content-width: 1354px;
 $color-text:#60606E;
 $background-main: #7beec7;
 
 // --------------------------------------------------- UTIL CLASSES --------------------------------------------------- //
 .center-horizontal {
   margin: 0 auto;
+}
+
+.side-padding {
+  padding-left: 83px;
+  padding-right: 83px;
 }
 
 // --------------------------------------------------- BASIC --------------------------------------------------- //
@@ -24,6 +29,8 @@ html {
 }
 
 body {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
   display: flex;
   flex-direction: column;
   font-size: 14px;
@@ -39,18 +46,26 @@ a {
   color: inherit;
 }
 
+h1,
+h2,
+h3,
+h4 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+}
+
 // --------------------------------------------------- HEADER --------------------------------------------------- //
 
 .header,
 .main,
 .footer {
   width: $content-width;
-
 }
 
 .header {
+  letter-spacing: .4px;
   background: no-repeat center url('./assets/img/header-bg-light.png');
-  height: 500px;
+  height: 520px;
   padding: 40px 80px 0px 80px;
   text-transform: uppercase;
 
@@ -61,7 +76,15 @@ a {
     justify-content: space-between;
   }
 
+  &__logo {
+    margin-left: 5px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+  }
+
   &-menu {
+    margin-top: 5px;
+    margin-right: 6px;
     width: 30px;
     height: 20px;
 
@@ -98,15 +121,20 @@ a {
   }
 
   &__main-content {
-    margin-top: 210px;
+    margin-top: 205px;
     display: flex;
     align-items: center;
     flex-direction: column;
   }
 
   &__main-header {
-    margin-bottom: 28px;
+    margin-bottom: 20px;
     font-size: 36px;
+  }
+
+  &__link {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
   }
 }
 
@@ -117,23 +145,27 @@ a {
 .main {
   padding-top: 150px;
 
+
   &__about {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 150px;
+    margin-bottom: 162px;
   }
 
   &__service {
-    margin-bottom: 150px;
+    padding: 0 110px;
+    margin-bottom: 147px;
   }
 
   &__pricing {
-    margin-bottom: 119px;
+    margin-bottom: 155px;
   }
 
   &__support {
-    padding: 50px 83px;
+    height: 345px;
+    padding-left: 85px;
+    padding-top: 42px;
     background-color: $background-main;
     display: flex;
   }
@@ -146,51 +178,65 @@ a {
   }
 
   &__header {
-    margin-bottom: 29px;
+    margin-bottom: 18px;
     font-size: 30px;
     text-transform: uppercase;
   }
 
   &__short-description {
-    margin-bottom: 100px;
-    width: 717px;
+    width: 745px;
+    text-align: center;
+    line-height: 1.8;
+    letter-spacing: 0.24px;
+    margin-bottom: 92px;
   }
 
   &__long-description {
     display: flex;
+    line-height: 2.2;
+    letter-spacing: 0.26px;
+
   }
 
-  &__icon-base {
+  &__rect-icon {
+    width: 70px;
+    height: 22px;
     position: absolute;
     z-index: -1;
-    left: 0px;
-    top: 16px;
+    left: 5px;
+    top: 18px;
+    background-color: #7beec7;
   }
 }
 
 .long-description {
   &__text {
-    margin-bottom: 48px;
+    margin-bottom: 35px;
   }
 
   &__list {
     display: grid;
+    grid-auto-flow: column;
     grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(5, auto);
+    grid-column-gap: 35px;
   }
 
   &__item {
-    margin-bottom: 15px;
+    margin-bottom: .5px;
   }
 
   &__item-img {
     line-height: 11px;
     height: 11px;
     width: 11px;
-    margin-right: 9px;
+    margin-right: 6px;
   }
 
   &__img {
-    margin-left: 36px;
+    height: 378px;
+    margin-top: 9px;
+    margin-left: 35px;
   }
 }
 
@@ -211,24 +257,30 @@ a {
   }
 
   &__header {
-    margin-bottom: 15px;
+    margin-bottom: 12px;
+    letter-spacing: 1px;
   }
 
   &__img {
-    margin-bottom: 15px;
+    margin-bottom: 24px;
   }
 
   &__description {
-    width: 223px;
+    width: 220px;
     text-align: center;
-    line-height: 2;
+    letter-spacing: .4px;
+    line-height: 2.1;
   }
 
-  &__icon-base {
+  &__rect-icon {
+    width: 52px;
+    height: 22px;
     position: absolute;
-    top: 25px;
-    left: 75px;
     z-index: -1;
+    left: 50%;
+    top: 30px;
+    transform: translate(-65%, 0);
+    background-color: #7beec7;
   }
 
   &__icon {
@@ -244,7 +296,6 @@ a {
 // --------------------------------------------------- PRICING --------------------------------------------------- //
 
 .pricing {
-
   &__description-wrapper {
     display: flex;
     flex-direction: column;
@@ -259,27 +310,36 @@ a {
 
   &__description-header {
     font-size: 30px;
+    letter-spacing: .3px;
     text-transform: uppercase;
-    margin-bottom: 29px;
+    margin-bottom: 19px;
   }
 
-  &__icon-base {
+  &__rect-icon {
+    width: 70px;
+    height: 22px;
     position: absolute;
-    top: 17px;
     z-index: -1;
+    left: 4px;
+    top: 17px;
+    background-color: #7beec7;
   }
 
   &__description {
-    width: 717px;
+    width: 746px;
+    text-align: center;
+    letter-spacing: .25px;
+    line-height: 1.7;
   }
 
   &__list {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(3, 375px);
     justify-content: space-between;
   }
 
   &__item {
-    padding: 40px 30px;
+    padding: 31px 33px 42px;
     transition: all .3s;
     position: relative;
 
@@ -311,26 +371,32 @@ a {
   &__header {
     font-size: 30px;
     text-transform: uppercase;
-    margin-bottom: 17px;
+    margin-bottom: 12px;
   }
 
   &__price {
+    height: 31px;
+    width: 172px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     color: #fff;
+    letter-spacing: 2.2px;
     text-transform: uppercase;
-    padding: 9.5px 21.5px;
+
     background: $background-main;
     margin-bottom: 49px;
   }
 
   &__feature-list {
-    margin-bottom: 51px;
+    margin-bottom: 52px;
   }
 
   &__feature-item {
-    width: 360px;
-    margin-bottom: 15px;
-
-
+    letter-spacing: .3px;
+    margin-bottom: 18.2px;
   }
 
   &__feature-img {
@@ -342,9 +408,14 @@ a {
   &__btn {
     border: none;
     outline: none;
+
+    height: 53px;
+    width: 140px;
+    padding-top: 4.5px;
+
     color: #fff;
     text-transform: uppercase;
-    padding: 20.5px 19.5px;
+    letter-spacing: .7px;
     background: $background-main;
 
     transition: all .3s;
@@ -360,30 +431,35 @@ a {
 // --------------------------------------------------- SUPPORT --------------------------------------------------- //
 
 .support {
-
-
   &__subscribe {
+    width: 580px;
+    height: 240px;
+    margin-top: 11px;
     margin-left: 98px;
-    padding: 20px 25px;
+    padding: 13px 28px 0 28px;
     background-color: #fff;
   }
 }
 
 .apply {
   &__header {
-    width: 487px;
-    line-height: 1.5;
+    width: 510px;
+    line-height: 1.6;
+    letter-spacing: .4px;
     font-size: 30px;
     text-transform: uppercase;
     color: #fff;
-    margin-bottom: 29px;
+    margin-bottom: 20px;
   }
 
   &__btn {
     border: none;
     outline: none;
-    padding: 20px 32px;
+    height: 50px;
+    width: 172px;
     text-transform: uppercase;
+    padding-top: 3px;
+    letter-spacing: 1px;
     font-weight: bolder;
     background-color: #fff;
     color: $background-main;
@@ -400,13 +476,17 @@ a {
 
 .subscribe {
   &__header {
-    width: 336px;
-    line-height: 1.4;
+    width: 360px;
+    line-height: 1.5;
     font-size: 24px;
     text-transform: uppercase;
+    margin-bottom: 6px;
   }
 
   &__text {
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: .3px;
     margin-bottom: 29px;
   }
 
@@ -415,8 +495,9 @@ a {
   }
 
   &__email-input {
-    height: 51px;
-    padding: 21px 19px;
+    margin-left: -6px;
+    height: 52px;
+    padding: 4px 0 0 18px;
     flex-grow: 1;
     border: 1px solid #CDCDCD;
     outline: none;
@@ -434,8 +515,10 @@ a {
   &__email-btn {
     outline: none;
     border: none;
-    height: 51px;
-    width: 136px;
+    height: 52px;
+    width: 140px;
+    padding-top: 4px;
+    letter-spacing: 1px;
     text-transform: uppercase;
     font-weight: bolder;
     background: $background-main;
@@ -454,7 +537,7 @@ a {
 // --------------------------------------------------- FOOTER --------------------------------------------------- //
 
 .footer {
-  padding: 49px 82px;
+  padding: 48px 82px 48px 87px;
 
   &__top-line {
     display: flex;
@@ -468,8 +551,9 @@ a {
   }
 
   &__nav-item {
+    letter-spacing: .1px;
     &_dash {
-      margin: 0 15px;
+      margin: 0 20px;
     }
 
     &_link {
@@ -482,16 +566,20 @@ a {
     }
   }
 
+  &__rights {
+    letter-spacing: .3px;
+  }
+
 
   &__social-links {
-    margin-top: 29px;
+    margin-top: 25px;
     display: flex;
     justify-content: flex-end;
   }
 
   &__social-icon {
     margin-left: 15px;
-    height: 16px;
+    height: 19px;
     width: fit-content;
     fill: #999999;
 

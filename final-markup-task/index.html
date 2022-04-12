@@ -5,6 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Final markup task</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
@@ -23,12 +29,10 @@
       </div>
     </header>
     <main class="main center-horizontal">
-      <section class="main__about">
+      <section class="main__about side-padding">
         <div class="about__header-wrapper">
           <h2 class="about__header">What we do</h2>
-          <svg class="about__icon-base" xmlns="http://www.w3.org/2000/svg" width="50" height="20" viewBox="77 30 50 20">
-            <path d="M77 30h50v20H77V30Z" fill="rgba(123, 238, 199, 1)" fill-rule="evenodd" data-name="Shape 16 copy" />
-          </svg>
+          <div class="about__rect-icon"></div>
         </div>
         <div class="about__short-description">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
@@ -87,24 +91,11 @@
           <img src="./assets/img/about-img.png" alt="what we do image" class="long-description__img" />
         </div>
       </section>
-      <section class="main__service service">
+      <section class="main__service service side-padding">
         <ul class="service__list">
           <li class="service__item">
             <div class="service__img">
-              <svg
-                class="service__icon-base"
-                xmlns="http://www.w3.org/2000/svg"
-                width="50"
-                height="20"
-                viewBox="77 30 50 20"
-              >
-                <path
-                  d="M77 30h50v20H77V30Z"
-                  fill="rgba(123, 238, 199, 1)"
-                  fill-rule="evenodd"
-                  data-name="Shape 16 copy"
-                />
-              </svg>
+              <div class="service__rect-icon"></div>
               <svg
                 class="service__icon service__icon_pulse"
                 xmlns="http://www.w3.org/2000/svg"
@@ -125,20 +116,7 @@
           </li>
           <li class="service__item">
             <div class="service__img">
-              <svg
-                class="service__icon-base"
-                xmlns="http://www.w3.org/2000/svg"
-                width="50"
-                height="20"
-                viewBox="77 30 50 20"
-              >
-                <path
-                  d="M77 30h50v20H77V30Z"
-                  fill="rgba(123, 238, 199, 1)"
-                  fill-rule="evenodd"
-                  data-name="Shape 16 copy"
-                />
-              </svg>
+              <div class="service__rect-icon"></div>
               <svg
                 class="service__icon service__icon_eternity"
                 xmlns="http://www.w3.org/2000/svg"
@@ -162,20 +140,7 @@
           </li>
           <li class="service__item">
             <div class="service__img">
-              <svg
-                class="service__icon-base"
-                xmlns="http://www.w3.org/2000/svg"
-                width="50"
-                height="20"
-                viewBox="77 30 50 20"
-              >
-                <path
-                  d="M77 30h50v20H77V30Z"
-                  fill="rgba(123, 238, 199, 1)"
-                  fill-rule="evenodd"
-                  data-name="Shape 16 copy"
-                />
-              </svg>
+              <div class="service__rect-icon"></div>
               <svg class="service__icon service__icon_bulb" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
                 <defs>
                   <style>
@@ -229,20 +194,7 @@
           </li>
           <li class="service__item">
             <div class="service__img">
-              <svg
-                class="service__icon-base"
-                xmlns="http://www.w3.org/2000/svg"
-                width="50"
-                height="20"
-                viewBox="77 30 50 20"
-              >
-                <path
-                  d="M77 30h50v20H77V30Z"
-                  fill="rgba(123, 238, 199, 1)"
-                  fill-rule="evenodd"
-                  data-name="Shape 16 copy"
-                />
-              </svg>
+              <div class="service__rect-icon"></div>
               <svg
                 class="service__icon service__icon_settings"
                 xmlns="http://www.w3.org/2000/svg"
@@ -272,24 +224,11 @@
           </li>
         </ul>
       </section>
-      <section class="main__pricing pricing">
+      <section class="main__pricing pricing side-padding">
         <div class="pricing__description-wrapper">
           <div class="pricing__description-header-wrapper">
             <h3 class="pricing__description-header">pricing plans</h3>
-            <svg
-              class="pricing__icon-base"
-              xmlns="http://www.w3.org/2000/svg"
-              width="50"
-              height="20"
-              viewBox="77 30 50 20"
-            >
-              <path
-                d="M77 30h50v20H77V30Z"
-                fill="rgba(123, 238, 199, 1)"
-                fill-rule="evenodd"
-                data-name="Shape 16 copy"
-              />
-            </svg>
+            <div class="pricing__rect-icon"></div>
           </div>
           <div class="pricing__description">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
@@ -413,7 +352,7 @@
           <button class="apply__btn">Get in touch</button>
         </div>
         <div class="support__subscribe subscribe">
-          <h3 class="subscribe__header">Stay informed with out newsletter</h3>
+          <h3 class="subscribe__header">Stay informed with our newsletter</h3>
           <div class="subscribe__text">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
             dolore magna aliqua.
