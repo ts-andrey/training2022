@@ -161,10 +161,10 @@ h4 {
 
   &__support {
     height: 345px;
-    padding-left: 85px;
-    padding-top: 42px;
+    padding: 42px 82px 42px 85px;
     background-color: $background-main;
     display: flex;
+    justify-content: space-between;
   }
 }
 
@@ -242,9 +242,9 @@ h4 {
 // --------------------------------------------------- SERVICE --------------------------------------------------- //
 
 .service {
-
   &__list {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
   }
 
@@ -451,7 +451,6 @@ h4 {
     width: 580px;
     height: 240px;
     margin-top: 11px;
-    margin-left: 98px;
     padding: 13px 28px 0 28px;
     background-color: #fff;
   }
@@ -729,3 +728,140 @@ h4 {
 
 // --------------------------------------------------- RESPONSIVNESS / ADAPTIVNESS --------------------------------------------------- //
 
+
+
+@media screen and (max-width: 1380px) {
+  .header {
+    width: 100%;
+  }
+
+  .main {
+    width: 100%;
+
+    &__pricing {
+      padding: 0 40px;
+    }
+  }
+
+  .footer {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  .main {
+    padding-top: 80px;
+
+    &__about {
+      margin-bottom: 80px;
+    }
+
+    &__service {
+      padding: 0 20px;
+      margin-bottom: 80px;
+    }
+
+    &__pricing {
+      margin-bottom: 80px;
+    }
+
+    &__support {
+      height: fit-content;
+      padding: 20px 40px;
+      margin-bottom: 40px;
+      flex-flow: column;
+      align-items: center;
+    }
+  }
+
+  .about__short-description {
+    width: auto;
+    margin-bottom: 30px;
+  }
+
+  .about__long-description {
+    flex-flow: column-reverse;
+    align-items: center;
+  }
+
+  .long-description__img {
+    margin: 0 0 30px 0;
+  }
+
+  .long-description__text {
+    max-width: 800px;
+    margin-bottom: 20px;
+  }
+
+  .long-description__list {
+    justify-content: center;
+    grid-template-columns: repeat(2, auto);
+    grid-column-gap: 100px;
+  }
+
+  .support {
+    &__apply {
+      display: flex;
+      flex-flow: column;
+      align-items: center;
+    }
+
+    &__subscribe {
+      height: fit-content;
+      margin: 40px 0 0 0;
+      padding: 14px 24px;
+    }
+  }
+
+  .service__list {
+    justify-content: center;
+  }
+
+  .service__item {
+    margin: 20px;
+  }
+
+  .pricing__description {
+    width: auto;
+  }
+
+  .pricing__list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .pricing__item {
+    width: 375px;
+    margin: 20px;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+
+  .footer {
+    &__top-line {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    &__nav-list {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    &__nav-item {
+      padding: 10px;
+
+      &_dash {
+        margin: 0 10px;
+        padding: 10px 0;
+      }
+    }
+
+    &__rights {
+      padding: 10px;
+    }
+  }
+}
