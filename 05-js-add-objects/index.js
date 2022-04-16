@@ -35,14 +35,14 @@ function intersect(...array) {
       argKeyArr.push(Object.keys(el));
       argValArr.push(Object.values(el));
     });
-    // set object to check its keys and values for identity
+    // set first object keys and values to check them for equality with other objects
     const workObjKeys = argKeyArr[0];
     const workObjVals = argValArr[0];
 
-    // loop through all picked object properties
+    // loop through all work object keys
     for (let i = 0; i < workObjKeys.length; i++) {
       let isFieldExist = true;
-      // check current field for identity throughout all other objects
+      // check if current key/value pair exist in all objects
       for (let j = 1; j < argKeyArr.length; j++) {
         let isFieldExistTemp = true;
         if (isFieldExist) {
@@ -58,7 +58,7 @@ function intersect(...array) {
           isFieldExist = isFieldExistTemp;
         }
       }
-      // if current field the same in each and every object -> place it to result object
+      // if all checks passed -> add pair to the result
       if (isFieldExist) {
         result[workObjKeys[i]] = workObjVals[i];
       }
