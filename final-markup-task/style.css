@@ -708,5 +708,128 @@ h4 {
     padding: 10px;
   }
 }
+@media screen and (max-width: 680px) {
+  .side-padding {
+    padding: 0 10%;
+  }
+
+  .header {
+    height: 380px;
+    padding: 20px 40px 0px 40px;
+    text-transform: uppercase;
+  }
+  .header__main-header {
+    font-size: 30px;
+    text-align: center;
+  }
+  .header__main-content {
+    margin-top: 110px;
+  }
+
+  .main {
+    padding-top: 40px;
+  }
+  .main__about {
+    margin-bottom: 40px;
+  }
+  .main__service {
+    padding: 0 10px;
+    margin-bottom: 40px;
+  }
+  .main__pricing {
+    margin-bottom: 40px;
+  }
+  .main__support {
+    height: fit-content;
+    padding: 10px 20px;
+    margin-bottom: 0;
+    flex-flow: column;
+    align-items: center;
+  }
+
+  .long-description__img {
+    height: auto;
+    width: 100%;
+  }
+  .long-description__list {
+    width: fit-content;
+    margin: 0 auto;
+    display: flex;
+    flex-flow: column;
+  }
+
+  .about__header {
+    font-size: 25px;
+  }
+  .about__rect-icon {
+    width: 64px;
+    height: 20px;
+    top: 14px;
+  }
+
+  .service__item {
+    margin: 10px;
+  }
+  .service__img {
+    margin-bottom: 10px;
+  }
+
+  .pricing__description-header {
+    font-size: 25px;
+  }
+  .pricing__rect-icon {
+    width: 64px;
+    height: 20px;
+    top: 14px;
+  }
+  .pricing__description-wrapper {
+    margin-bottom: 20px;
+  }
+  .pricing__item {
+    width: 300px;
+    padding: 20px;
+  }
+
+  .price-item__header {
+    font-size: 25px;
+  }
+  .price-item__btn {
+    padding-top: 2px;
+    height: 45px;
+  }
+  .price-item__price {
+    margin-bottom: 30px;
+  }
+  .price-item__feature-list {
+    margin-bottom: 30px;
+  }
+
+  .support__subscribe {
+    width: fit-content;
+  }
+
+  .apply__header {
+    font-size: 20px;
+    width: 90%;
+  }
+
+  .subscribe__header {
+    width: 80%;
+    font-size: 17px;
+  }
+  .subscribe__email-wrapper {
+    width: 100%;
+  }
+  .subscribe__email-btn {
+    max-width: 80px;
+  }
+  .subscribe__text {
+    font-size: 14px;
+  }
+
+  .footer {
+    padding: 30px;
+  }
+}
 
 /*# sourceMappingURL=style.css.map */

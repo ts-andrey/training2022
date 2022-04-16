@@ -865,3 +865,161 @@ h4 {
     }
   }
 }
+
+@media screen and (max-width: 680px) {
+  .side-padding {
+    padding: 0 10%;
+  }
+
+  .header {
+    height: 380px;
+    padding: 20px 40px 0px 40px;
+    text-transform: uppercase;
+
+    &__main-header {
+      font-size: 30px;
+      text-align: center;
+    }
+
+    &__main-content {
+      margin-top: 110px;
+    }
+  }
+
+  .main {
+    padding-top: 40px;
+
+    &__about {
+      margin-bottom: 40px;
+    }
+
+    &__service {
+      padding: 0 10px;
+      margin-bottom: 40px;
+    }
+
+    &__pricing {
+      margin-bottom: 40px;
+    }
+
+    &__support {
+      height: fit-content;
+      padding: 10px 20px;
+      margin-bottom: 0;
+      flex-flow: column;
+      align-items: center;
+    }
+  }
+
+
+  .long-description {
+    &__img {
+      height: auto;
+      width: 100%;
+    }
+
+    &__list {
+      width: fit-content;
+      margin: 0 auto;
+      display: flex;
+      flex-flow: column;
+    }
+  }
+
+  .about {
+    &__header {
+      font-size: 25px;
+    }
+
+    &__rect-icon {
+      width: 64px;
+      height: 20px;
+      top: 14px;
+    }
+  }
+
+  .service {
+    &__item {
+      margin: 10px;
+    }
+
+    &__img {
+      margin-bottom: 10px;
+    }
+  }
+
+  .pricing {
+    &__description-header {
+      font-size: 25px;
+    }
+
+    &__rect-icon {
+      width: 64px;
+      height: 20px;
+      top: 14px;
+    }
+
+    &__description-wrapper {
+      margin-bottom: 20px;
+    }
+
+    &__item {
+      width: 300px;
+      padding: 20px;
+    }
+  }
+
+  .price-item {
+    &__header {
+      font-size: 25px;
+    }
+
+    &__btn {
+      padding-top: 2px;
+      height: 45px;
+    }
+
+    &__price{
+      margin-bottom: 30px;
+    }
+    &__feature-list{
+      margin-bottom: 30px;
+    }
+  }
+
+  .support {
+    &__subscribe {
+      width: fit-content;
+    }
+  }
+
+  .apply {
+    &__header {
+      font-size: 20px;
+      width: 90%;
+    }
+  }
+
+  .subscribe {
+    &__header {
+      width: 80%;
+      font-size: 17px;
+    }
+
+    &__email-wrapper {
+      width: 100%;
+    }
+
+    &__email-btn{
+      max-width: 80px;
+    }
+
+    &__text {
+      font-size: 14px;
+    }
+  }
+
+  .footer {
+    padding: 30px;
+  }
+}
