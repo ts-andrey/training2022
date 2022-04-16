@@ -1,0 +1,15 @@
+{
+  "name": "final-markup-task",
+  "version": "1.0.0",
+  "description": "final markup task from html/css lections",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch:sass": "sass ./style.scss ./style.css -w"
+  },
+  "author": "Andrei Tsakunou",
+  "license": "ISC",
+  "dependencies": {
+    "sass": "^1.49.11"
+  }
+}
