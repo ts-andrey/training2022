@@ -20,18 +20,17 @@ const d = { z: 8, b: 7, y: 2 };
 
 /*  ----- ADDITIONAL TASK SOLUTION ---- */
 function intersect(...objs) {
+  if (objs.length < 1) {
+    return {};
+  }
   const objEntryArr = [];
   objs.forEach(el => {
     objEntryArr.push(Object.entries(el));
   });
   const workObjEntries = objEntryArr[0];
-  const acc = {};
-  workObjEntries.forEach(el => {
-    if (objEntryArr.every(elem => elem.toString().includes(el.toString()))) {
-      acc[el[0]] = el[1];
-    }
-  });
-  return acc;
+  return Object.fromEntries(
+    workObjEntries.filter(el => objEntryArr.every(elem => elem.toString().includes(el.toString())))
+  );
 }
 
 // zero equal props test case
@@ -52,5 +51,4 @@ const x = { c: 2, a: 0, b: 1 };
 const y = { b: 1, d: 3, e: 4, a: 0 };
 const z = { b: 1, f: 5, g: 6, h: 7, a: 0 }; */
 
-// console.log(intersect1(w, x, y, z));
 // console.log(intersect(w, x, y, z));
