@@ -1,6 +1,6 @@
 /*  ----- NECESSARY TASK SOLUTION ---- */
 function add(...array) {
-  let result = {};
+  const result = {};
   array.forEach(el => {
     const data = Object.entries(el);
     data.forEach(el => {
@@ -24,9 +24,7 @@ function intersect(...objs) {
     return {};
   }
   const objEntryArr = [];
-  objs.forEach(el => {
-    objEntryArr.push(Object.entries(el));
-  });
+  objs.forEach(el => objEntryArr.push(Object.entries(el)));
   const workObjEntries = objEntryArr[0];
   return Object.fromEntries(
     workObjEntries.filter(el => objEntryArr.every(elem => elem.toString().includes(el.toString())))
