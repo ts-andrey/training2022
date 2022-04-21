@@ -19,6 +19,8 @@ import { PlaceListComponent } from './main/place-list/place-list.component';
 import { PlaceComponent } from './main/place-list/place/place.component';
 import { LicenseComponent } from './footer/license/license.component';
 import { PlaceLoaderComponent } from './main/place-list/place-loader/place-loader.component';
+import { DeleteBtnComponent } from './main/place-list/place/delete-btn/delete-btn.component';
+import { EditBtnComponent } from './main/place-list/place/edit-btn/edit-btn.component';
 
 @NgModule({
   declarations: [
@@ -38,13 +40,12 @@ import { PlaceLoaderComponent } from './main/place-list/place-loader/place-loade
     PlaceListComponent,
     PlaceComponent,
     LicenseComponent,
-    PlaceLoaderComponent
+    PlaceLoaderComponent,
+    DeleteBtnComponent,
+    EditBtnComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

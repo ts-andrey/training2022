@@ -1,1 +1,13 @@
-<p>place works!</p>
+<h3 class="place-item__header">{{ "placeName" }}</h3>
+<div class="place-item__info">
+  <p class="place-item__description">{{ "placeDescription" }}</p>
+  <p class="place-item__country">{{ "placeCountry" }}</p>
+  <p class="place-item__city">{{ "placeCity" }}</p>
+  <p class="place-item__coords">{{ "coordinates" }}</p>
+  <button class="place-item__more-info">More info...</button>
+</div>
+<div class="place-item__manager">
+  <p class="place-item__date">{{ "placeDate" }}</p>
+  <app-delete-btn class="place-item__btn"></app-delete-btn>
+  <app-edit-btn class="place-item__btn"></app-edit-btn>
+</div>
