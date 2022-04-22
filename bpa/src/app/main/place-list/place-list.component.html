@@ -1,4 +1,6 @@
-<ul class="main__place-list" *ngFor="place; of: places">
-  <li class="place-list__item"><app-place></app-place></li>
+<ul class="main__place-list" *ngFor="let place of places">
+  <li class="place-list__item"><app-place [place]="place"></app-place></li>
   <app-place-loader></app-place-loader>
 </ul>
+
+<app-place-form></app-place-form>

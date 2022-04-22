@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { IPlace } from './../../../model/IPlace';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-place',
@@ -9,6 +10,8 @@ export class PlaceComponent implements OnInit {
   constructor() {}
 
   isActive = false;
+  @Input()
+  place!: IPlace;
 
   ngOnInit(): void {}
 }

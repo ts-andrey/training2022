@@ -22,6 +22,11 @@ import { PlaceLoaderComponent } from './main/place-list/place-loader/place-loade
 import { DeleteBtnComponent } from './main/place-list/place/delete-btn/delete-btn.component';
 import { EditBtnComponent } from './main/place-list/place/edit-btn/edit-btn.component';
 import { PlaceFormComponent } from './main/place-form/place-form.component';
+import { PlaceNameComponent } from './main/place-form/place-name/place-name.component';
+import { PlaceDescriptionComponent } from './main/place-form/place-description/place-description.component';
+import { PlaceCountryComponent } from './main/place-form/place-country/place-country.component';
+import { PlaceCityComponent } from './main/place-form/place-city/place-city.component';
+import { PlaceCoordsComponent } from './main/place-form/place-coords/place-coords.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +50,11 @@ import { PlaceFormComponent } from './main/place-form/place-form.component';
     DeleteBtnComponent,
     EditBtnComponent,
     PlaceFormComponent,
+    PlaceNameComponent,
+    PlaceDescriptionComponent,
+    PlaceCountryComponent,
+    PlaceCityComponent,
+    PlaceCoordsComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
