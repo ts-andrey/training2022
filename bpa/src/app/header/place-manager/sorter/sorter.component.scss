@@ -1,0 +1,13 @@
+.manager {
+  &__sorter-wrapper {
+    display: flex;
+  }
+
+  &__sorter {
+    margin-right: 2rem;
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
+}
