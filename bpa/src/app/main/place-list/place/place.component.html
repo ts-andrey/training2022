@@ -1,13 +1,24 @@
-<h3 class="place-item__header">{{ "placeName" }}</h3>
-<div class="place-item__info">
-  <p class="place-item__description">{{ "placeDescription" }}</p>
-  <p class="place-item__country">{{ "placeCountry" }}</p>
-  <p class="place-item__city">{{ "placeCity" }}</p>
-  <p class="place-item__coords">{{ "coordinates" }}</p>
+<div class="place-item__info info">
+  <h3 class="place-item__header info__item">{{ "placeName" }}</h3>
+  <p class="place-item__country info__item">
+    Country / city: <span class="info__insert">{{ "placeCountry" }},</span>
+    <span class="info__insert"> {{ "placeCity" }}</span>
+  </p>
+  <p class="place-item__description info__item" *ngIf="isActive">
+    Description: <span class="info__insert">{{ "placeDescription" }}</span>
+  </p>
+  <p class="place-item__coords info__item" *ngIf="isActive">
+    Coordinates: <span class="info__insert">{{ "placeCoordinates" }}</span>
+  </p>
+  <p class="place-item__author info__item" *ngIf="isActive">
+    Author: <span class="info__insert">{{ "placeAuthor" }}</span>
+  </p>
   <button class="place-item__more-info">More info...</button>
 </div>
-<div class="place-item__manager">
-  <p class="place-item__date">{{ "placeDate" }}</p>
-  <app-delete-btn class="place-item__btn"></app-delete-btn>
-  <app-edit-btn class="place-item__btn"></app-edit-btn>
+<div class="place-item__setting setting">
+  <p class="place-item__date">created at {{ "placeDate" }}</p>
+  <div class="setting__btn-wrapper">
+    <app-edit-btn class="place-item__btn"></app-edit-btn>
+    <app-delete-btn class="place-item__btn"></app-delete-btn>
+  </div>
 </div>
