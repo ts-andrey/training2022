@@ -21,6 +21,7 @@ import { LicenseComponent } from './footer/license/license.component';
 import { PlaceLoaderComponent } from './main/place-list/place-loader/place-loader.component';
 import { DeleteBtnComponent } from './main/place-list/place/delete-btn/delete-btn.component';
 import { EditBtnComponent } from './main/place-list/place/edit-btn/edit-btn.component';
+import { PlaceFormComponent } from './main/place-form/place-form.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { EditBtnComponent } from './main/place-list/place/edit-btn/edit-btn.comp
     PlaceLoaderComponent,
     DeleteBtnComponent,
     EditBtnComponent,
+    PlaceFormComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
