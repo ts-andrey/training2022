@@ -1,15 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-place-description',
   templateUrl: './place-description.component.html',
-  styleUrls: ['./place-description.component.scss']
+  styleUrls: ['./place-description.component.scss'],
 })
 export class PlaceDescriptionComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
+  @Output()
+  description = '';
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

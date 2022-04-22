@@ -1,15 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-place-country',
   templateUrl: './place-country.component.html',
-  styleUrls: ['./place-country.component.scss']
+  styleUrls: ['./place-country.component.scss'],
 })
 export class PlaceCountryComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  @Output()
+  countryName = '';
+  ngOnInit(): void {}
 }

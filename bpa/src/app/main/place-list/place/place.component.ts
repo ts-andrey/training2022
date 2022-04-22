@@ -10,6 +10,7 @@ export class PlaceComponent implements OnInit {
   constructor() {}
 
   isActive = false;
+  
   @Input()
   place!: IPlace;
 
