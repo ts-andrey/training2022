@@ -1,11 +1,17 @@
 function sumObjectValues(obj) {
-  const result = Array.prototype.reduce.apply(Object.values(obj));
-  console.log(result);
+  // first solution
+  return Array.prototype.reduce.call(Object.values(obj), (a, b) => (typeof b === 'number' ? a + b : a));
+
+  // second solution
+  // return [].reduce.apply(Object.values(obj), [(a, b) => (typeof b === 'number' ? a + b : a)]);
 }
 let object = {
   a: 2,
   name: 'John',
   age: 23,
+  c: '100',
+  b: true,
+  else: 1,
 };
 
-sumObjectValues(object); // 25
+console.log(sumObjectValues(object)); // 26
