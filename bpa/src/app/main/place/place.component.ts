@@ -1,4 +1,4 @@
-import { IPlace } from './../../../model/IPlace';
+import { IPlace } from './../../model/IPlace';
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({

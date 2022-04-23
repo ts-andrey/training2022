@@ -17,6 +17,22 @@ export class PlaceListComponent implements OnInit {
       placeCoords: 'placeCoords',
       placeRegisterDate: 'placeRegisterDate',
     },
+    {
+      placeName: 'placeName',
+      placeDescription: 'placeDescription',
+      placeCity: 'placeCity',
+      placeCountry: 'placeCountry',
+      placeCoords: 'placeCoords',
+      placeRegisterDate: 'placeRegisterDate',
+    },
+    {
+      placeName: 'placeName',
+      placeDescription: 'placeDescription',
+      placeCity: 'placeCity',
+      placeCountry: 'placeCountry',
+      placeCoords: 'placeCoords',
+      placeRegisterDate: 'placeRegisterDate',
+    },
   ];
 
   ngOnInit(): void {}

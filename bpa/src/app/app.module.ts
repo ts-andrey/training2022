@@ -17,17 +17,18 @@ import { SorterComponent } from './header/place-manager/sorter/sorter.component'
 import { MakerComponent } from './header/place-manager/maker/maker.component';
 import { PlaceTypeComponent } from './header/place-manager/place-type/place-type.component';
 import { PlaceListComponent } from './main/place-list/place-list.component';
-import { PlaceComponent } from './main/place-list/place/place.component';
+import { PlaceComponent } from './main/place/place.component';
 import { LicenseComponent } from './footer/license/license.component';
-import { PlaceLoaderComponent } from './main/place-list/place-loader/place-loader.component';
-import { DeleteBtnComponent } from './main/place-list/place/delete-btn/delete-btn.component';
-import { EditBtnComponent } from './main/place-list/place/edit-btn/edit-btn.component';
+import { PlaceLoaderComponent } from './main/place-loader/place-loader.component';
+import { DeleteBtnComponent } from './main/place/delete-btn/delete-btn.component';
+import { EditBtnComponent } from './main/place/edit-btn/edit-btn.component';
 import { PlaceFormComponent } from './main/place-form/place-form.component';
 import { PlaceNameComponent } from './main/place-form/place-name/place-name.component';
 import { PlaceDescriptionComponent } from './main/place-form/place-description/place-description.component';
 import { PlaceCountryComponent } from './main/place-form/place-country/place-country.component';
 import { PlaceCityComponent } from './main/place-form/place-city/place-city.component';
 import { PlaceCoordsComponent } from './main/place-form/place-coords/place-coords.component';
+import { AppAboutComponent } from './main/app-about/app-about.component';
 
 @NgModule({
   declarations: [
@@ -56,6 +57,7 @@ import { PlaceCoordsComponent } from './main/place-form/place-coords/place-coord
     PlaceCountryComponent,
     PlaceCityComponent,
     PlaceCoordsComponent,
+    AppAboutComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
