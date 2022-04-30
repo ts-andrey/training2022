@@ -1,4 +1,4 @@
-function premutations(someString) {
+function permutation(someString) {
   const shuffleArr = someString.split('');
   let result = [someString];
   const shuffleIndex = shuffleArr.length - 1;
@@ -29,9 +29,9 @@ function premutations(someString) {
     shift();
     shiftIndex--;
   }
-  result = Array.from(new Set(result)).sort((a, b) => a.localeCompare(b));
+  result = Array.from(new Set(result)).sort((a, b) => a.localeCompare(b)).join(', ');
   return result;
 }
 
-const insertString = 'abc';
-console.log(premutations(insertString));
+const testStr = 'abc';
+console.log(permutation(testStr));
