@@ -1,9 +1,8 @@
 export interface IPlace {
   placeName: string;
+  placeLocation: string;
+  placeImg?: string;
   placeDescription: string;
-  placeCity: string;
-  placeCountry: string;
-  placeCoords: string;
   placeRegisterDate?: string;
   placeAuthor?: string;
 }

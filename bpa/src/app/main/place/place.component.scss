@@ -5,14 +5,44 @@
     color: #65FBD2;
   }
 
+  &__info {
+    width: 85%;
+  }
+
+  &__setting {
+    // width: 13%;
+  }
+
+  &__img-wrapper {
+    width: 100%;
+    margin: 1rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__img {
+    width: 60%;
+    border-radius: 5px;
+  }
+
   &__more-info {
     background-color: transparent;
     color: #FAF7FF;
     border-bottom: 1px solid #FAF7FF;
+    transition: all .25s;
+
+    &:hover {
+      cursor: pointer;
+      color: darken(#FAF7FF, 10%);
+    }
   }
 
+
+
   &__date {
-    margin-bottom: 2rem;
+    margin-bottom: 1rem ;
+    width: max-content;
     color: #8685EF;
   }
 }
@@ -30,7 +60,8 @@
 
 .setting {
   &__btn-wrapper {
+    width: 11rem;
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
   }
 }

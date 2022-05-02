@@ -27,7 +27,6 @@ import { PlaceNameComponent } from './main/place-form/place-name/place-name.comp
 import { PlaceDescriptionComponent } from './main/place-form/place-description/place-description.component';
 import { PlaceCountryComponent } from './main/place-form/place-country/place-country.component';
 import { PlaceCityComponent } from './main/place-form/place-city/place-city.component';
-import { PlaceCoordsComponent } from './main/place-form/place-coords/place-coords.component';
 import { AppAboutComponent } from './main/app-about/app-about.component';
 
 @NgModule({
@@ -56,7 +55,6 @@ import { AppAboutComponent } from './main/app-about/app-about.component';
     PlaceDescriptionComponent,
     PlaceCountryComponent,
     PlaceCityComponent,
-    PlaceCoordsComponent,
     AppAboutComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],

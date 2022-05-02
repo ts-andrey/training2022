@@ -4,4 +4,10 @@
   background-color: #8685EF;
   color: #212121;
   border-radius: 1rem;
+  transition: all .25s;
+
+  &:hover {
+    cursor: pointer;
+    background-color: lighten(#8685EF, 10%);
+  }
 }

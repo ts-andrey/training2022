@@ -4,4 +4,10 @@
   margin-bottom: 1rem;
   background-color: #FAF7FF;
   color: #212121;
+  transition: all .25s;
+
+  &:hover {
+    cursor: pointer;
+    background-color: darken(#FAF7FF, 10%);
+  }
 }

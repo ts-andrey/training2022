@@ -1,5 +1,15 @@
 <div class="manager__sorter-wrapper">
-  <span class="manager__sorter">sort by rating</span>
-  <span class="manager__sorter">sort by date</span>
-  <span class="manager__sorter">sort by country</span>
+  <span
+    class="manager__sorter"
+    (click)="onClickSortByRating()"
+    >sort by rating</span
+  >
+  <span class="manager__sorter" (click)="onClickSortByDate()"
+    >sort by date</span
+  >
+  <span
+    class="manager__sorter"
+    (click)="onClickSortByCountry()"
+    >sort by country</span
+  >
 </div>

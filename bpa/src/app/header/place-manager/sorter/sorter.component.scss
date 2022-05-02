@@ -5,9 +5,14 @@
 
   &__sorter {
     margin-right: 2rem;
-
+    transition: all .25s;
     &:last-of-type {
       margin-right: 0;
+    }
+
+    &:hover {
+      cursor: pointer;
+      color: lighten(#8685EF, 10%);
     }
   }
 }

@@ -1,0 +1,21 @@
+.header {
+  &__nav-list {
+    display: grid;
+    grid-auto-flow: column;
+    grid-gap: 0 1rem;
+  }
+
+  &__nav-item {
+    padding: 0.25rem .5rem;
+    background-color: lighten(#212121, 10%);
+    border-radius: 5px;
+    transition: all .25s;
+
+    &:hover {
+      cursor: pointer;
+      color: lighten(#8685EF, 10%);
+      background-color: lighten(#212121, 20%);
+
+    }
+  }
+}
