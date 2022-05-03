@@ -206,7 +206,7 @@ export class PlaceListComponent implements OnInit, OnDestroy {
     },
   ];
 
-  places = [...this.placesRelax];
+  places = [...this.placesCamping];
 
   ngOnInit(): void {
     this.subscription = this.router.events.subscribe((ev) => {

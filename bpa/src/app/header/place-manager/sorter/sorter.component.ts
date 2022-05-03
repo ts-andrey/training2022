@@ -11,27 +11,27 @@ export class SorterComponent implements OnInit {
   public isSortDateStraight: boolean = true;
   public isSortCountryStraight: boolean = true;
 
-  @Output() sortEvent = new EventEmitter<ISortEvent>();
+  @Output() sortEventData = new EventEmitter<ISortEvent>();
 
   constructor() {}
 
   ngOnInit(): void {}
   onClickSortByRating() {
-    this.sortEvent.emit({
+    this.sortEventData.emit({
       sortType: 'rating',
       sortWay: this.isSortRatingStraight ? 'straight' : 'reverse',
     });
     this.isSortRatingStraight = !this.isSortRatingStraight;
   }
   onClickSortByDate() {
-    this.sortEvent.emit({
+    this.sortEventData.emit({
       sortType: 'date',
       sortWay: this.isSortDateStraight ? 'straight' : 'reverse',
     });
     this.isSortDateStraight = !this.isSortDateStraight;
   }
   onClickSortByCountry() {
-    this.sortEvent.emit({
+    this.sortEventData.emit({
       sortType: 'country',
       sortWay: this.isSortCountryStraight ? 'straight' : 'reverse',
     });

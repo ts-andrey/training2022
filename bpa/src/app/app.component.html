@@ -1,3 +1,6 @@
-<app-header class="app__header-wrapper root-padding"></app-header>
+<app-header
+  class="app__header-wrapper root-padding"
+  (headerSortData)="appSortEvent($event)"
+></app-header>
 <app-main class="app__main-wrapper root-padding"></app-main>
 <app-footer class="app__footer-wrapper root-padding"></app-footer>
