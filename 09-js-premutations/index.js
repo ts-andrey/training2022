@@ -1,37 +1,28 @@
-function permutation(someString) {
-  const shuffleArr = someString.split('');
-  let result = [someString];
-  const shuffleIndex = shuffleArr.length - 1;
-  let shiftIndex = shuffleIndex;
-  let counter = 0;
-  function shuffle() {
-    for (let i = shuffleIndex; i >= 1; i--) {
-      const tempChar = shuffleArr.splice(i, 1);
-      shuffleArr.splice(i - 1, 0, tempChar[0]);
-      result.push(shuffleArr.join(''));
+function permutation(str) {
+  function permutate(string) {
+    if (!string || typeof string !== 'string') {
+      return 'Have to pass a string to get a proper result';
+    } else if (string.length < 2) {
+      return string;
     }
-  }
-  function shift() {
-    const shiftArr = someString.split('');
-    const curChar = shiftArr.splice(shiftIndex, 1);
-    shiftArr.push(curChar);
-    for (let i = shiftIndex; i >= 1; i--) {
-      const tempChar = shuffleArr.splice(i, 1);
-      shuffleArr.splice(i - 1, 0, tempChar[0]);
-      result.push(shuffleArr.join(''));
+
+    const result = [];
+
+    for (let i = 0; i < string.length; i++) {
+      const char = string[i];
+
+      if (string.indexOf(char) === i) {
+        const remainingChars = `${string.slice(0, i)}${string.slice(i + 1)}`;
+
+        for (let item of permutate(remainingChars)) {
+          result.push(char + item);
+        }
+      }
     }
+    return result;
   }
-  while (shuffleIndex > counter) {
-    shuffle();
-    counter++;
-  }
-  while (shiftIndex > 0) {
-    shift();
-    shiftIndex--;
-  }
-  result = Array.from(new Set(result)).sort((a, b) => a.localeCompare(b)).join(', ');
-  return result;
+  return permutate(str).join(', ');
 }
 
-const testStr = 'abc';
+const testStr = 'abcd';
 console.log(permutation(testStr));
