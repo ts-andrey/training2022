@@ -1,0 +1,13 @@
+.place-item__btn_edit {
+  padding: .5rem 1rem;
+  border-radius: .2rem;
+  margin-bottom: 1rem;
+  background-color: #FAF7FF;
+  color: #212121;
+  transition: all .25s;
+
+  &:hover {
+    cursor: pointer;
+    background-color: darken(#FAF7FF, 10%);
+  }
+}

@@ -1,0 +1,24 @@
+.app {
+  &__header-wrapper {
+    background-color: #212121;
+    color: #8685EF;
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+  }
+
+  &__main-wrapper {
+    flex-grow: 1;
+    background-color: #FAF8FF;
+    color: #212121;
+  }
+
+  &__footer-wrapper {
+    background-color: #373544;
+    color: #FAF8FF;
+  }
+}
+
+// helper classes
+.root-padding {
+  padding: 2vh 7vw;
+}

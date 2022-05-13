@@ -1,0 +1,14 @@
+.manager__create-btn {
+  font-size: 1.5rem;
+  padding: .8rem 2rem;
+  border-radius: .2rem;
+  background-color: #FAF7FF;
+  color: #212121;
+  transition: all .25s;
+
+  &:hover {
+    cursor: pointer;
+    background-color: darken(#FAF7FF, 10%);
+
+  }
+}
