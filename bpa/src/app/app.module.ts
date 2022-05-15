@@ -1,3 +1,4 @@
+import { SortDataService } from './services/sort-data.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
@@ -28,6 +29,9 @@ import { PlaceDescriptionComponent } from './main/place-form/place-description/p
 import { PlaceCountryComponent } from './main/place-form/place-country/place-country.component';
 import { PlaceCityComponent } from './main/place-form/place-city/place-city.component';
 import { AppAboutComponent } from './main/app-about/app-about.component';
+import { FilterPlacesPipe } from './pipes/filter-places.pipe';
+import { SortPlacesPipe } from './pipes/sort-places.pipe';
+import { DataService } from './services/data.service';
 
 @NgModule({
   declarations: [
@@ -56,9 +60,12 @@ import { AppAboutComponent } from './main/app-about/app-about.component';
     PlaceCountryComponent,
     PlaceCityComponent,
     AppAboutComponent,
+    
+    FilterPlacesPipe,
+    SortPlacesPipe,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
-  providers: [],
+  providers: [DataService, SortDataService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
