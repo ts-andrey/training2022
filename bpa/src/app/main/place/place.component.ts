@@ -7,12 +7,10 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./place.component.scss'],
 })
 export class PlaceComponent implements OnInit {
+  public isActive = false;
+  @Input() place!: IPlace;
+  @Input() id!: string;
   constructor() {}
-
-  isActive = false;
-
-  @Input()
-  place!: IPlace;
 
   ngOnInit(): void {}
 

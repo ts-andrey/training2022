@@ -5,6 +5,7 @@
     class="manager__filter"
     type="text"
     placeholder="filter places"
-    [(ngModel)]="filterData"
+    #inputFilter
+    (keyup)="filterData(inputFilter.value)"
   />
 </div>

@@ -1,3 +1,5 @@
+import { DataService } from './../../services/data.service';
+import { ActivatedRoute } from '@angular/router';
 import { IPlace } from './../../model/IPlace';
 import { Component, Input, OnInit } from '@angular/core';
 
@@ -7,14 +9,20 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./place-form.component.scss'],
 })
 export class PlaceFormComponent implements OnInit {
-  constructor() {}
-  @Input() place?: IPlace;
+  private place?: IPlace;
 
-  placeName = this.place?.placeName || '';
-  placeLocation = this.place?.placeLocation || '';
-  placeDescription = this.place?.placeDescription || '';
-  placeAuthor = this.place?.placeAuthor || '';
-  placeDate = this.place?.placeRegisterDate || '';
+  public placeName = this.place?.placeName || '';
+  public placeLocation = this.place?.placeLocation || '';
+  public placeDescription = this.place?.placeDescription || '';
+  public placeAuthor = this.place?.placeAuthor || '';
+  public placeDate = this.place?.placeRegisterDate || '';
 
+  constructor(private route: ActivatedRoute, private data: DataService) {
+    const mode = <string>this.route.snapshot.paramMap.get('mode');
+    if (mode === 'edit') {
+      const id = <string>this.route.snapshot.paramMap.get('id');
+      this.place = this.data.getPlace(id);
+    }
+  }
   ngOnInit(): void {}
 }

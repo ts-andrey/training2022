@@ -1,5 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { ISortEvent } from '../model/ISortEvent';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -7,18 +6,7 @@ import { ISortEvent } from '../model/ISortEvent';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
-  @Output() headerSortData = new EventEmitter<ISortEvent>();
-
   constructor() {}
 
   ngOnInit(): void {}
-
-  headerSortEvent(sortEvent: any) {
-    console.log('header start event: ', sortEvent);
-     this.headerSortData.emit({
-      sortType: sortEvent.sortType,
-      sortWay: sortEvent.sortWay,
-    });
-    console.log('header end event: ', sortEvent);
-  }
 }

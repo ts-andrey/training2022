@@ -1,5 +1,5 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { ISortEvent } from 'src/app/model/ISortEvent';
+import { SortDataService } from './../../../services/sort-data.service';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-sorter',
@@ -7,34 +7,10 @@ import { ISortEvent } from 'src/app/model/ISortEvent';
   styleUrls: ['./sorter.component.scss'],
 })
 export class SorterComponent implements OnInit {
-  public isSortRatingStraight: boolean = true;
-  public isSortDateStraight: boolean = true;
-  public isSortCountryStraight: boolean = true;
-
-  @Output() sortEventData = new EventEmitter<ISortEvent>();
-
-  constructor() {}
+  constructor(private sortDataService: SortDataService) {}
 
   ngOnInit(): void {}
-  onClickSortByRating() {
-    this.sortEventData.emit({
-      sortType: 'rating',
-      sortWay: this.isSortRatingStraight ? 'straight' : 'reverse',
-    });
-    this.isSortRatingStraight = !this.isSortRatingStraight;
-  }
-  onClickSortByDate() {
-    this.sortEventData.emit({
-      sortType: 'date',
-      sortWay: this.isSortDateStraight ? 'straight' : 'reverse',
-    });
-    this.isSortDateStraight = !this.isSortDateStraight;
-  }
-  onClickSortByCountry() {
-    this.sortEventData.emit({
-      sortType: 'country',
-      sortWay: this.isSortCountryStraight ? 'straight' : 'reverse',
-    });
-    this.isSortCountryStraight = !this.isSortCountryStraight;
+  onClickSort(sortType: string) {
+    this.sortDataService.setSortType(sortType);
   }
 }

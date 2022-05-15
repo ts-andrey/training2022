@@ -21,8 +21,9 @@ export class SortPlacesPipe implements PipeTransform {
           new Date(<string>a[sortProp]).getTime() -
           new Date(<string>b[sortProp]).getTime()
       );
+    } else {
+      return sortArr(value, sortProp, isReversed);
     }
-    return sortArr(value, sortProp, isReversed);
   }
 }
 

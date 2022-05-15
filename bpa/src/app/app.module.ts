@@ -32,6 +32,7 @@ import { AppAboutComponent } from './main/app-about/app-about.component';
 import { FilterPlacesPipe } from './pipes/filter-places.pipe';
 import { SortPlacesPipe } from './pipes/sort-places.pipe';
 import { DataService } from './services/data.service';
+import { FilterPlacesService } from './services/filter-places.service';
 
 @NgModule({
   declarations: [
@@ -60,12 +61,12 @@ import { DataService } from './services/data.service';
     PlaceCountryComponent,
     PlaceCityComponent,
     AppAboutComponent,
-    
+
     FilterPlacesPipe,
     SortPlacesPipe,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
-  providers: [DataService, SortDataService],
+  providers: [DataService, SortDataService, FilterPlacesService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

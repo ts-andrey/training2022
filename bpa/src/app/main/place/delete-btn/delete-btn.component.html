@@ -1,1 +1,6 @@
-<button class="place-item__btn place-item__btn_delete">Delete</button>
+<button
+  class="place-item__btn place-item__btn_delete"
+  [routerLink]="['/place-form', { mode: 'edit', id: id }]"
+>
+  Delete
+</button>

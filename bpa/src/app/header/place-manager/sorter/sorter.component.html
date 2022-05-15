@@ -1,15 +1,13 @@
 <div class="manager__sorter-wrapper">
-  <span
-    class="manager__sorter"
-    (click)="onClickSortByRating()"
-    >sort by rating</span
+  <span class="manager__descr">sort by:</span>
+  <span class="manager__sorter" (click)="onClickSort('placeRegisterDate')"
+    >date</span
   >
-  <span class="manager__sorter" (click)="onClickSortByDate()"
-    >sort by date</span
+  <span class="manager__sorter" (click)="onClickSort('placeName')">name</span>
+  <span class="manager__sorter" (click)="onClickSort('placeLocation')"
+    >location</span
   >
-  <span
-    class="manager__sorter"
-    (click)="onClickSortByCountry()"
-    >sort by country</span
-  >
+  <!-- <span class="manager__sorter" (click)="onClickSort('placeAuthor')"
+    >author</span
+  > -->
 </div>

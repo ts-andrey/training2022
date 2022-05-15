@@ -24,7 +24,7 @@
 <div class="place-item__setting setting">
   <p class="place-item__date">created at {{ place.placeRegisterDate }}</p>
   <div class="setting__btn-wrapper">
-    <app-edit-btn class="place-item__btn"></app-edit-btn>
-    <app-delete-btn class="place-item__btn"></app-delete-btn>
+    <app-edit-btn class="place-item__btn" [id]="id"></app-edit-btn>
+    <app-delete-btn class="place-item__btn" [id]="id"></app-delete-btn>
   </div>
 </div>

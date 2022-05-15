@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class SortDataService {
   public sortTypeLast: string = '';
-  public sortType: string = '';
+  public sortType: string = 'placeRegisterDate';
   public isReversed: boolean = false;
   constructor() {}
 
