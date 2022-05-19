@@ -1,4 +1,4 @@
-import { Component, OnInit, Output } from '@angular/core';
+import { Component, OnInit, Output, Input } from '@angular/core';
 
 @Component({
   selector: 'app-place-name',
@@ -7,9 +7,7 @@ import { Component, OnInit, Output } from '@angular/core';
 })
 export class PlaceNameComponent implements OnInit {
   constructor() {}
-
-  @Output()
-  name = '';
+  @Input() placeName?: string;
 
   ngOnInit(): void {}
 }

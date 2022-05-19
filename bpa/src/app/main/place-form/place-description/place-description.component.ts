@@ -1,4 +1,4 @@
-import { Component, OnInit, Output } from '@angular/core';
+import { Component, OnInit, Output, Input } from '@angular/core';
 
 @Component({
   selector: 'app-place-description',
@@ -8,8 +8,7 @@ import { Component, OnInit, Output } from '@angular/core';
 export class PlaceDescriptionComponent implements OnInit {
   constructor() {}
 
-  @Output()
-  description = '';
+  @Input() placeDescription?: string;
 
   ngOnInit(): void {}
 }

@@ -14,7 +14,7 @@ import { Subscription } from 'rxjs';
 export class PlaceListComponent implements OnInit, OnDestroy {
   private subscription: Subscription = new Subscription();
   public places: IPlace[];
-  
+
   constructor(
     private router: Router,
     private data: DataService,

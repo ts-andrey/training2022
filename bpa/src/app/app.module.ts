@@ -26,8 +26,7 @@ import { EditBtnComponent } from './main/place/edit-btn/edit-btn.component';
 import { PlaceFormComponent } from './main/place-form/place-form.component';
 import { PlaceNameComponent } from './main/place-form/place-name/place-name.component';
 import { PlaceDescriptionComponent } from './main/place-form/place-description/place-description.component';
-import { PlaceCountryComponent } from './main/place-form/place-country/place-country.component';
-import { PlaceCityComponent } from './main/place-form/place-city/place-city.component';
+import { PlaceLocationComponent } from './main/place-form/place-location/place-location.component';
 import { AppAboutComponent } from './main/app-about/app-about.component';
 import { FilterPlacesPipe } from './pipes/filter-places.pipe';
 import { SortPlacesPipe } from './pipes/sort-places.pipe';
@@ -58,8 +57,7 @@ import { FilterPlacesService } from './services/filter-places.service';
     PlaceFormComponent,
     PlaceNameComponent,
     PlaceDescriptionComponent,
-    PlaceCountryComponent,
-    PlaceCityComponent,
+    PlaceLocationComponent,
     AppAboutComponent,
 
     FilterPlacesPipe,

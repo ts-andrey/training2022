@@ -1,14 +1,23 @@
 <form class="main__place-form place-form">
   <div class="place-form__data-short">
-    <app-place-name></app-place-name>
-    <app-place-country></app-place-country>
-    <app-place-city></app-place-city>
+    <app-place-name [placeName]="place?.placeName"></app-place-name>
+    <app-place-location
+      [placeLocation]="place?.placeLocation"
+    ></app-place-location>
   </div>
   <div class="place-form__data-long">
-    <app-place-description></app-place-description>
+    <app-place-description
+      [placeDescription]="place?.placeDescription"
+    ></app-place-description>
     <div class="place-form__controls">
       <button type="submit" class="place-form__btn">save</button>
-      <button type="reset" class="place-form__btn">cancel</button>
+      <button
+        type="reset"
+        class="place-form__btn"
+        [routerLink]="['/place-list']"
+      >
+        cancel
+      </button>
     </div>
   </div>
 </form>

@@ -11,7 +11,7 @@ export class PlaceTypeComponent implements OnInit, OnDestroy {
   private subscription: Subscription = new Subscription();
   constructor(private router: Router) {}
 
-  placeType = 'relax';
+  placeType = 'Camping places';
 
   ngOnInit(): void {
     this.subscription = this.router.events.subscribe((ev) => {

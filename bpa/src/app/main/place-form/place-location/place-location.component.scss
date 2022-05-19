@@ -1,15 +1,15 @@
 .place-form {
-  &__country-wrapper {
+  &__location-wrapper {
     display: flex;
     flex-direction: column;
     margin-bottom: 2vh;
   }
 
-  &__country-label {
+  &__location-label {
     margin-bottom: .5vh;
   }
 
-  &__country {
+  &__location {
     padding: .5rem 1.5rem;
     background-color: #FAF7FF;
     border: 1px solid lighten(#373544, 40%);

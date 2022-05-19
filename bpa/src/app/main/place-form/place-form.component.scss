@@ -9,6 +9,9 @@
 }
 
 .place-form {
+  &__data-short{
+    width: 48%;
+  }
   &__controls {
     margin-top: 2vh;
     display: flex;
