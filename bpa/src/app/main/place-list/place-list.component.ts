@@ -17,31 +17,31 @@ export class PlaceListComponent implements OnInit, OnDestroy {
 
   constructor(
     private router: Router,
-    private data: DataService,
+    private dataService: DataService,
     public filterPS: FilterPlacesService,
     public sortPS: SortDataService
   ) {
-    this.places = this.data.campingPlaces;
+    this.places = this.dataService.campingPlaces;
   }
 
   ngOnInit(): void {
     this.subscription = this.router.events.subscribe((ev) => {
       if (ev instanceof NavigationEnd) {
         if (ev.url.split('=')[1] === 'camping') {
-          this.data.type = 'camping';
-          this.places = this.data.campingPlaces;
+          this.dataService.type = 'camping';
+          this.places = this.dataService.campingPlaces;
         } else if (ev.url.split('=')[1] === 'relax') {
-          this.data.type = 'relax';
-          this.places = this.data.relaxPlaces;
+          this.dataService.type = 'relax';
+          this.places = this.dataService.relaxPlaces;
         } else if (ev.url.split('=')[1] === 'food') {
-          this.data.type = 'food';
-          this.places = this.data.foodPlaces;
+          this.dataService.type = 'food';
+          this.places = this.dataService.foodPlaces;
         } else if (ev.url.split('=')[1] === 'travel') {
-          this.data.type = 'travel';
-          this.places = this.data.travelPlaces;
+          this.dataService.type = 'travel';
+          this.places = this.dataService.travelPlaces;
         } else if (ev.url.split('=')[1] === 'heal') {
-          this.data.type = 'heal';
-          this.places = this.data.healPlaces;
+          this.dataService.type = 'heal';
+          this.places = this.dataService.healPlaces;
         }
       }
     });

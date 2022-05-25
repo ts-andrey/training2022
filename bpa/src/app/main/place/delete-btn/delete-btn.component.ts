@@ -1,3 +1,4 @@
+import { DataService } from './../../../services/data.service';
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,11 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class DeleteBtnComponent implements OnInit {
   @Input() id!: string;
-  constructor() {}
+  constructor(private dataService: DataService) {}
 
   ngOnInit(): void {}
 
-  onClickDelete() {}
+  deletePlace() {
+    this.dataService.deletePlace(this.id);
+  }
 }

@@ -10,29 +10,51 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./place-form.component.scss'],
 })
 export class PlaceFormComponent implements OnInit {
-  public place?: IPlace;
+  public place: IPlace = {
+    placeName: '',
+    placeLocation: '',
+    placeImg: '',
+    placeDescription: '',
+    placeRegisterDate: '',
+    placeAuthor: '',
+  };
 
-  public placeName = '';
-  public placeLocation = '';
-  public placeDescription = '';
-  public placeDate = '';
+  private id?: string;
+  private mode = 'create';
 
   constructor(
     private route: ActivatedRoute,
     private data: DataService,
     public location: Location
   ) {
-    const mode = <string>this.route.snapshot.paramMap.get('mode');
-    if (mode === 'edit') {
-      const id = <string>this.route.snapshot.paramMap.get('id');
-      this.place = this.data.getPlace(id);
-      this.placeName = this.place.placeName;
-      this.placeLocation = this.place.placeLocation;
-      this.placeDescription = this.place.placeDescription;
-      this.placeDate = this.place.placeRegisterDate;
+    this.mode = <string>this.route.snapshot.paramMap.get('mode');
+    if (this.mode === 'edit') {
+      this.id = <string>this.route.snapshot.paramMap.get('id');
+      this.place = Object.assign(this.place, this.data.getPlace(this.id));
     }
   }
   ngOnInit(): void {}
+  updateDescription(data: any) {
+    this.place.placeDescription = data.description;
+  }
+  updateName(data: any) {
+    this.place.placeName = data.name;
+  }
+  updateImg(data: any) {
+    this.place.placeImg = data.imgUrl;
+  }
+  updateLocation(data: any) {
+    this.place.placeLocation = data.location;
+  }
+  onSubmit() {
+    if (this.place.placeName && this.place.placeLocation) {
+      if (this.mode === 'edit') {
+        this.data.updatePlace(<string>this.id, this.place);
+      } else {
+        this.data.addPlace(this.place);
+      }
+    }
+  }
   goBack(event: Event) {
     event.preventDefault();
     this.location.historyGo(-1);

@@ -1,16 +1,27 @@
 <form class="main__place-form place-form">
   <div class="place-form__data-short">
-    <app-place-name [placeName]="place?.placeName"></app-place-name>
+    <app-place-name
+      [placeName]="place?.placeName"
+      (name)="updateName($event)"
+    ></app-place-name>
     <app-place-location
       [placeLocation]="place?.placeLocation"
+      (location)="updateLocation($event)"
     ></app-place-location>
+    <app-place-image
+      [placeImage]="place?.placeImg"
+      (placeImgUrl)="updateImg($event)"
+    ></app-place-image>
   </div>
   <div class="place-form__data-long">
     <app-place-description
+      (description)="updateDescription($event)"
       [placeDescription]="place?.placeDescription"
     ></app-place-description>
     <div class="place-form__controls">
-      <button type="submit" class="place-form__btn">save</button>
+      <button type="submit" class="place-form__btn" (click)="onSubmit()">
+        save
+      </button>
       <button
         type="reset"
         class="place-form__btn"

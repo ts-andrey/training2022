@@ -32,6 +32,7 @@ import { FilterPlacesPipe } from './pipes/filter-places.pipe';
 import { SortPlacesPipe } from './pipes/sort-places.pipe';
 import { DataService } from './services/data.service';
 import { FilterPlacesService } from './services/filter-places.service';
+import { PlaceImageComponent } from './main/place-form/place-image/place-image.component';
 
 @NgModule({
   declarations: [
@@ -62,6 +63,7 @@ import { FilterPlacesService } from './services/filter-places.service';
 
     FilterPlacesPipe,
     SortPlacesPipe,
+    PlaceImageComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [DataService, SortDataService, FilterPlacesService],

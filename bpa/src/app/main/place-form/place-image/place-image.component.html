@@ -1,0 +1,16 @@
+<div class="place-form__image-wrapper">
+  <label for="place-form__image" class="place-form__image-label"
+    >Image url of the place</label
+  >
+  <input
+    type="text"
+    id="place-form__image"
+    class="place-form__image"
+    placeholder="image url"
+    autocomplete="off"
+    [(ngModel)]="placeImage"
+    name="imgUrl"
+    (keyup)="onType()"
+   
+  />
+</div>

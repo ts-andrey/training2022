@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, Input } from '@angular/core';
+import { Component, OnInit, Output, Input, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-place-name',
@@ -8,6 +8,13 @@ import { Component, OnInit, Output, Input } from '@angular/core';
 export class PlaceNameComponent implements OnInit {
   constructor() {}
   @Input() placeName?: string;
+  @Output() name = new EventEmitter<{
+    name: string | undefined;
+  }>();
+
+  onType() {
+    this.name.emit({ name: this.placeName });
+  }
 
   ngOnInit(): void {}
 }

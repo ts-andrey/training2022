@@ -11,5 +11,6 @@
     placeholder="place description"
     autocomplete="off"
     [(ngModel)]="placeDescription"
+    (keyup)="onType()"
   ></textarea>
 </div>

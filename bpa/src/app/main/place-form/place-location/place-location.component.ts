@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, Input } from '@angular/core';
+import { Component, OnInit, Output, Input, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-place-location',
@@ -9,5 +9,13 @@ export class PlaceLocationComponent implements OnInit {
   constructor() {}
 
   @Input() placeLocation?: string;
+
+  @Output() location = new EventEmitter<{
+    location: string | undefined;
+  }>();
+
+  onType() {
+    this.location.emit({ location: this.placeLocation });
+  }
   ngOnInit(): void {}
 }

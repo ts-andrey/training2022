@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, Input } from '@angular/core';
+import { Component, OnInit, Output, Input, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-place-description',
@@ -10,5 +10,12 @@ export class PlaceDescriptionComponent implements OnInit {
 
   @Input() placeDescription?: string;
 
+  @Output() description = new EventEmitter<{
+    description: string | undefined;
+  }>();
+
+  onType() {
+    this.description.emit({ description: this.placeDescription });
+  }
   ngOnInit(): void {}
 }
