@@ -1,5 +1,6 @@
+import { Subject, Subscription } from 'rxjs';
 import { IPlace } from './../model/IPlace';
-import { Injectable } from '@angular/core';
+import { Injectable, OnDestroy } from '@angular/core';
 import {
   placesCamping,
   placesFood,
@@ -7,22 +8,26 @@ import {
   placesRelax,
   placesTravel,
 } from '../../assets/data';
+import { Router, NavigationEnd, ActivatedRoute } from '@angular/router';
 
 @Injectable({
   providedIn: 'root',
 })
-export class DataService {
-  campingPlaces!: IPlace[];
-  foodPlaces!: IPlace[];
-  healPlaces!: IPlace[];
-  relaxPlaces!: IPlace[];
-  travelPlaces!: IPlace[];
-  allPlaces!: IPlace[];
-  type: string = 'camping';
+export class DataService implements OnDestroy {
+  public places!: IPlace[];
+  public allPlaces!: IPlace[];
+  public isData: boolean = true;
 
+  private campingPlaces!: IPlace[];
+  private foodPlaces!: IPlace[];
+  private healPlaces!: IPlace[];
+  private relaxPlaces!: IPlace[];
+  private travelPlaces!: IPlace[];
+  private type: string = 'camping';
+  private placeSubscription!: Subscription;
   private placeIndex!: number;
 
-  constructor() {
+  constructor(private router: Router, private route: ActivatedRoute) {
     this.campingPlaces = placesCamping;
     this.foodPlaces = placesFood;
     this.healPlaces = placesHeal;
@@ -35,72 +40,65 @@ export class DataService {
       ...this.relaxPlaces,
       ...this.travelPlaces,
     ];
+
+    this.placeSubscription = this.router.events.subscribe((ev) => {
+      if (ev instanceof NavigationEnd) {
+        if (!ev.url.includes('mode')) {
+          const placeType = ev.url.split('=')[1];
+          this.setPlaces(placeType);
+        }
+      }
+    });
   }
-  getPlace(id: string) {
-    let result;
-    if (this.type === 'camping') {
-      result = findPlace(this.campingPlaces, id);
-    } else if (this.type === 'food') {
-      result = findPlace(this.foodPlaces, id);
-    } else if (this.type === 'relax') {
-      result = findPlace(this.relaxPlaces, id);
-    } else if (this.type === 'heal') {
-      result = findPlace(this.healPlaces, id);
-    } else if (this.type === 'travel') {
-      result = findPlace(this.travelPlaces, id);
+
+  private setPlaces(placeType: string | null) {
+    if (placeType === 'camping') {
+      this.type = 'camping';
+      this.places = this.campingPlaces;
+    } else if (placeType === 'relax') {
+      this.type = 'relax';
+      this.places = this.relaxPlaces;
+    } else if (placeType === 'food') {
+      this.type = 'food';
+      this.places = this.foodPlaces;
+    } else if (placeType === 'travel') {
+      this.type = 'travel';
+      this.places = this.travelPlaces;
+    } else if (placeType === 'heal') {
+      this.type = 'heal';
+      this.places = this.healPlaces;
     } else {
-      result = findPlace(this.allPlaces, id);
+      this.type = 'all';
+      this.places = this.allPlaces;
     }
+  }
+
+  private reload() {
+    this.isData = false;
+    setTimeout(() => (this.isData = true));
+  }
+
+  ngOnDestroy(): void {
+    this.placeSubscription.unsubscribe();
+  }
+
+  getPlace(id: string) {
+    let result = findPlace(this.places, id);
     this.placeIndex = result.placeIndex;
     return result.place;
   }
 
   updatePlace(id: string, place: IPlace) {
     this.getPlace(id);
-    if (this.type === 'camping') {
-      this.campingPlaces.splice(this.placeIndex, 1, place);
-    } else if (this.type === 'food') {
-      this.foodPlaces.splice(this.placeIndex, 1, place);
-    } else if (this.type === 'relax') {
-      this.relaxPlaces.splice(this.placeIndex, 1, place);
-    } else if (this.type === 'heal') {
-      this.healPlaces.splice(this.placeIndex, 1, place);
-    } else if (this.type === 'travel') {
-      this.travelPlaces.splice(this.placeIndex, 1, place);
-    } else {
-      this.allPlaces.splice(this.placeIndex, 1, place);
-    }
+    this.places.splice(this.placeIndex, 1, place);
   }
   addPlace(place: IPlace) {
-    if (this.type === 'camping') {
-      this.campingPlaces.push(place);
-    } else if (this.type === 'food') {
-      this.foodPlaces.push(place);
-    } else if (this.type === 'relax') {
-      this.relaxPlaces.push(place);
-    } else if (this.type === 'heal') {
-      this.healPlaces.push(place);
-    } else if (this.type === 'travel') {
-      this.travelPlaces.push(place);
-    } else {
-      this.allPlaces.push(place);
-    }
+    this.places.push(place);
   }
   deletePlace(id: string) {
     this.getPlace(id);
-    if (this.type === 'camping') {
-      this.campingPlaces.splice(this.placeIndex, 1);
-    } else if (this.type === 'food') {
-      this.foodPlaces.splice(this.placeIndex, 1);
-    } else if (this.type === 'relax') {
-      this.relaxPlaces.splice(this.placeIndex, 1);
-    } else if (this.type === 'heal') {
-      this.healPlaces.splice(this.placeIndex, 1);
-    } else if (this.type === 'travel') {
-      this.travelPlaces.splice(this.placeIndex, 1);
-    } else {
-      this.allPlaces.splice(this.placeIndex, 1);
-    }
+    this.places.splice(this.placeIndex, 1);
+    this.reload();
   }
 }
 

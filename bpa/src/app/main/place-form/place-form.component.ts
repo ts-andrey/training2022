@@ -24,13 +24,13 @@ export class PlaceFormComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private data: DataService,
+    private dataService: DataService,
     public location: Location
   ) {
     this.mode = <string>this.route.snapshot.paramMap.get('mode');
     if (this.mode === 'edit') {
       this.id = <string>this.route.snapshot.paramMap.get('id');
-      this.place = Object.assign(this.place, this.data.getPlace(this.id));
+      this.place = Object.assign(this.place, this.dataService.getPlace(this.id));
     }
   }
   ngOnInit(): void {}
@@ -49,10 +49,11 @@ export class PlaceFormComponent implements OnInit {
   onSubmit() {
     if (this.place.placeName && this.place.placeLocation) {
       if (this.mode === 'edit') {
-        this.data.updatePlace(<string>this.id, this.place);
+        this.dataService.updatePlace(<string>this.id, this.place);
       } else {
-        this.data.addPlace(this.place);
+        this.dataService.addPlace(this.place);
       }
+      this.location.historyGo(-1);
     }
   }
   goBack(event: Event) {

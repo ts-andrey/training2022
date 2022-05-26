@@ -1,17 +1,19 @@
-<ul
-  class="main__place-list"
-  *ngFor="
-    let place of places
-      | filterPlaces: filterPS.filterStr
-      | sortPlaces: sortPS.sortType:sortPS.isReversed;
-    last as isLast
-  "
->
-  <li class="place-list__item">
-    <app-place
-      [place]="place"
-      [id]="place.placeName + place.placeLocation"
-    ></app-place>
-  </li>
-  <!-- <app-place-loader *ngIf="isLast"></app-place-loader> -->
-</ul>
+<div class="main__place-list-wrapper" *ngIf="dataService.isData">
+  <ul
+    class="main__place-list"
+    *ngFor="
+      let place of dataService.places
+        | filterPlaces: filterPS.filterStr
+        | sortPlaces: sortPS.sortType:sortPS.isReversed;
+      last as isLast
+    "
+  >
+    <li class="place-list__item">
+      <app-place
+        [place]="place"
+        [id]="place.placeName + place.placeLocation"
+      ></app-place>
+    </li>
+    <!-- <app-place-loader *ngIf="isLast"></app-place-loader> -->
+  </ul>
+</div>
