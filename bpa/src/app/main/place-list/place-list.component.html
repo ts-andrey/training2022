@@ -1,19 +1,18 @@
 <div class="main__place-list-wrapper" *ngIf="dataService.isData">
-  <ul
-    class="main__place-list"
-    *ngFor="
-      let place of dataService.places
-        | filterPlaces: filterPS.filterStr
-        | sortPlaces: sortPS.sortType:sortPS.isReversed;
-      last as isLast
-    "
-  >
-    <li class="place-list__item">
-      <app-place
-        [place]="place"
-        [id]="place.placeName + place.placeLocation"
-      ></app-place>
-    </li>
-    <!-- <app-place-loader *ngIf="isLast"></app-place-loader> -->
-  </ul>
+  <table cdk-table [dataSource]="dataService.places"  class="main__place-list">
+    <!-- User name Definition -->
+    <ng-container cdkColumnDef="places">
+      <th cdk-header-cell *cdkHeaderCellDef></th>
+      <td cdk-cell *cdkCellDef="let element" class="place-list__item">
+        <app-place
+          [place]="element"
+          [id]="element.placeName + element.placeLocation"
+        ></app-place>
+      </td>
+    </ng-container>
+
+    <!-- Header and Row Declarations -->
+    <tr cdk-header-row *cdkHeaderRowDef="['places']"></tr>
+    <tr cdk-row *cdkRowDef="let row; columns: ['places']"></tr>
+  </table>
 </div>

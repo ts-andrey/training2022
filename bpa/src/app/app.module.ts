@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 
+import { CdkTableModule } from '@angular/cdk/table';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -65,7 +67,7 @@ import { PlaceImageComponent } from './main/place-form/place-image/place-image.c
     SortPlacesPipe,
     PlaceImageComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, CdkTableModule],
   providers: [DataService, SortDataService, FilterPlacesService],
   bootstrap: [AppComponent],
 })
