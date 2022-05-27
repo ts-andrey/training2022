@@ -23,7 +23,6 @@ export class DataService implements OnDestroy {
   private healPlaces!: IPlace[];
   private relaxPlaces!: IPlace[];
   private travelPlaces!: IPlace[];
-  private type: string = 'camping';
   private placeSubscription!: Subscription;
   private placeIndex!: number;
 
@@ -53,22 +52,16 @@ export class DataService implements OnDestroy {
 
   private setPlaces(placeType: string | null) {
     if (placeType === 'camping') {
-      this.type = 'camping';
       this.places = this.campingPlaces;
     } else if (placeType === 'relax') {
-      this.type = 'relax';
       this.places = this.relaxPlaces;
     } else if (placeType === 'food') {
-      this.type = 'food';
       this.places = this.foodPlaces;
     } else if (placeType === 'travel') {
-      this.type = 'travel';
       this.places = this.travelPlaces;
     } else if (placeType === 'heal') {
-      this.type = 'heal';
       this.places = this.healPlaces;
     } else {
-      this.type = 'all';
       this.places = this.allPlaces;
     }
   }
@@ -93,6 +86,7 @@ export class DataService implements OnDestroy {
     this.places.splice(this.placeIndex, 1, place);
   }
   addPlace(place: IPlace) {
+    place.placeRegisterDate = new Date().toDateString();
     this.places.push(place);
   }
   deletePlace(id: string) {

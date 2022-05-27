@@ -3,6 +3,7 @@ import { Location } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { IPlace } from './../../model/IPlace';
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-place-form',
@@ -30,23 +31,28 @@ export class PlaceFormComponent implements OnInit {
     this.mode = <string>this.route.snapshot.paramMap.get('mode');
     if (this.mode === 'edit') {
       this.id = <string>this.route.snapshot.paramMap.get('id');
-      this.place = Object.assign(this.place, this.dataService.getPlace(this.id));
+      this.place = Object.assign(
+        this.place,
+        this.dataService.getPlace(this.id)
+      );
     }
   }
   ngOnInit(): void {}
-  updateDescription(data: any) {
+
+  private updatePlace(data: {
+    description: string;
+    name: string;
+    imgUrl: string;
+    location: string;
+  }) {
     this.place.placeDescription = data.description;
-  }
-  updateName(data: any) {
     this.place.placeName = data.name;
-  }
-  updateImg(data: any) {
     this.place.placeImg = data.imgUrl;
-  }
-  updateLocation(data: any) {
     this.place.placeLocation = data.location;
   }
-  onSubmit() {
+
+  onSubmit(form: NgForm) {
+    this.updatePlace(form.value);
     if (this.place.placeName && this.place.placeLocation) {
       if (this.mode === 'edit') {
         this.dataService.updatePlace(<string>this.id, this.place);
@@ -56,6 +62,7 @@ export class PlaceFormComponent implements OnInit {
       this.location.historyGo(-1);
     }
   }
+
   goBack(event: Event) {
     event.preventDefault();
     this.location.historyGo(-1);
