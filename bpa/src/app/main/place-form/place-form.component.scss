@@ -11,9 +11,10 @@
 }
 
 .place-form {
-  &__data-short{
+  &__data-short {
     width: 48%;
   }
+
   &__controls {
     margin-top: 2vh;
     display: flex;
@@ -97,8 +98,10 @@
     border-radius: .2rem;
     outline: none;
     overflow-y: auto;
+    resize: none;
     
     border: 1px solid $color-dark-l-40;
+
     &:focus {
       border: 1px solid $color-dark-l-10;
     }

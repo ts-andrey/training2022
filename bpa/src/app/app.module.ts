@@ -66,13 +66,9 @@ import { FilterPlacesService } from './services/filter-places.service';
     FormsModule,
     CdkTableModule,
     ScrollingModule,
-  ],
-  providers: [
-    DataService,
-    SortDataService,
-    FilterPlacesService,
     TextFieldModule,
   ],
+  providers: [DataService, SortDataService, FilterPlacesService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -60,6 +60,10 @@
         rows="13"
         placeholder="place description"
         autocomplete="off"
+        cdkTextareaAutosize
+        #autosize="cdkTextareaAutosize"
+        cdkAutosizeMinRows="3"
+        cdkAutosizeMaxRows="12"
         [ngModel]="place?.placeDescription"
         name="description"
       ></textarea>

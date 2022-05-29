@@ -1,20 +1,22 @@
+@import "./shared/styles/vars.scss";
+
 .app {
   &__header-wrapper {
-    background-color: #212121;
-    color: #8685EF;
+    background-color: $color-dark;
+    color: $color-main;
     font-size: 1.8rem;
     letter-spacing: 1px;
   }
 
   &__main-wrapper {
     flex-grow: 1;
-    background-color: #FAF8FF;
-    color: #212121;
+    background-color: $color-light;
+    color: $color-dark;
   }
 
   &__footer-wrapper {
-    background-color: #373544;
-    color: #FAF8FF;
+    background-color: $color-dark-l-5;
+    color: $color-light;
   }
 }
 
