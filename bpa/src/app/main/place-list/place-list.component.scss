@@ -5,6 +5,11 @@ app-place {
   justify-content: space-between;
 }
 
+cdk-virtual-scroll-viewport {
+  height: 60vh;
+  width: 62vw;
+}
+
 .main__place-list {
   display: flex;
   flex-direction: column;
