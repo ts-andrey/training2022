@@ -1,5 +1,13 @@
 <nav class="header__nav">
+  <span class="header__descr">Places: </span>
   <ul class="header__nav-list">
+    <li class="header__nav-item">
+      <a
+        [routerLink]="['/place-list', { placeType: 'all' }]"
+        routerLinkActive="active"
+        >All</a
+      >
+    </li>
     <li class="header__nav-item">
       <a
         [routerLink]="['/place-list', { placeType: 'camping' }]"

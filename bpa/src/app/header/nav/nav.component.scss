@@ -1,4 +1,12 @@
+@import "../../shared/styles/vars.scss";
+
 .header {
+  &__descr {
+    color: $color-attract;
+    display: inline-block;
+    margin-bottom: 0.5rem;
+  }
+
   &__nav-list {
     display: grid;
     grid-auto-flow: column;
@@ -7,15 +15,14 @@
 
   &__nav-item {
     padding: 0.25rem .5rem;
-    background-color: lighten(#212121, 10%);
+    background-color: $color-dark-l-10;
     border-radius: 5px;
     transition: all .25s;
 
     &:hover {
       cursor: pointer;
-      color: lighten(#8685EF, 10%);
-      background-color: lighten(#212121, 20%);
-
+      color: $color-attract;
+      background-color: $color-dark-l-20;
     }
   }
 }

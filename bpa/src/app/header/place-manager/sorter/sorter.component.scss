@@ -1,3 +1,5 @@
+@import '../../../shared/styles/vars.scss';
+
 .manager {
   &__sorter-wrapper {
     display: flex;
@@ -5,7 +7,7 @@
 
   &__descr {
     margin-right: 1rem;
-    border-bottom: 1px solid #8685EF;
+    border-bottom: 1px solid $color-main;
   }
 
   &__sorter {
@@ -18,7 +20,7 @@
 
     &:hover {
       cursor: pointer;
-      color: lighten(#8685EF, 10%);
+      color: $color-attract;
     }
   }
 }

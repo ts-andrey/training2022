@@ -1,0 +1,27 @@
+$color-main: #8685EF;
+$color-attract: #65FBD2;
+$color-dark: #212121;
+$color-light: #FAF7FF;
+
+$color-main-d-10: darken($color-main, 10%);
+
+$color-main-l-10: lighten($color-main, 10%);
+$color-main-l-20: lighten($color-main, 20%);
+
+
+$color-attract-d-10: darken($color-attract, 10%);
+
+$color-attract-l-10: lighten($color-attract, 10%);
+
+
+$color-dark-d-10: darken($color-dark, 10%);
+
+$color-dark-l-10: lighten($color-dark, 10%);
+$color-dark-l-20: lighten($color-dark, 20%);
+$color-dark-l-30: lighten($color-dark, 30%);
+$color-dark-l-40: lighten($color-dark, 40%);
+
+
+$color-light-d-10: darken($color-light, 10%);
+
+$color-light-l-10: lighten($color-light, 10%);

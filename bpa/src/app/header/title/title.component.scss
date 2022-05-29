@@ -1,7 +1,9 @@
+@import "../../shared/styles/vars.scss";
+
 .header {
   &__title {
-    border-top: 1px solid lighten(#212121, 10%);
-    border-bottom: 1px solid lighten(#212121, 10%);
+    border-top: 1px solid $color-dark-l-10;
+    border-bottom: 1px solid $color-dark-l-10;
     padding: 1vh 0;
     font-size: 4.5rem;
   }

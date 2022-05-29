@@ -1,10 +1,12 @@
+@import '../../shared/styles/vars.scss';
+
 .main__place-form {
   width: 40vw;
   padding: 3vh 1vw;
   display: flex;
   justify-content: space-between;
-  border: 1px solid #212121;
-  background-color: lighten(#8685EF, 20%);
+  border: 1px solid $color-dark;
+  background-color: $color-main-l-20;
   border-radius: 1rem;
 }
 
@@ -29,12 +31,12 @@
 
   &__name {
     padding: .5rem 1.5rem;
-    background-color: #FAF7FF;
-    border: 1px solid lighten(#373544, 40%);
+    background-color: $color-light;
+    border: 1px solid $color-dark-l-40;
     border-radius: .2rem;
 
     &:focus {
-      border: 1px solid #373544;
+      border: 1px solid $color-dark-l-10;
     }
   }
 
@@ -50,12 +52,12 @@
 
   &__location {
     padding: .5rem 1.5rem;
-    background-color: #FAF7FF;
-    border: 1px solid lighten(#373544, 40%);
+    background-color: $color-light;
+    border: 1px solid $color-dark-l-40;
     border-radius: .2rem;
 
     &:focus {
-      border: 1px solid #373544;
+      border: 1px solid $color-dark-l-10;
     }
   }
 
@@ -71,12 +73,12 @@
 
   &__image {
     padding: .5rem 1.5rem;
-    background-color: #FAF7FF;
-    border: 1px solid lighten(#373544, 40%);
+    background-color: $color-light;
+    border: 1px solid $color-dark-l-40;
     border-radius: .2rem;
 
     &:focus {
-      border: 1px solid #373544;
+      border: 1px solid $color-dark-l-10;
     }
   }
 
@@ -91,14 +93,14 @@
 
   &__description {
     padding: .5rem 1.5rem;
-    background-color: #FAF7FF;
+    background-color: $color-light;
     border-radius: .2rem;
     outline: none;
     overflow-y: auto;
     
-    border: 1px solid lighten(#373544, 40%);
+    border: 1px solid $color-dark-l-40;
     &:focus {
-      border: 1px solid #373544;
+      border: 1px solid $color-dark-l-10;
     }
   }
 
@@ -106,8 +108,8 @@
     height: fit-content;
     padding: .5rem 1.5rem;
     border-radius: .2rem;
-    background-color: #FAF7FF;
-    border: 1px solid lighten(#373544, 40%);
+    background-color: $color-light;
+    border: 1px solid $color-dark-l-40;
     display: block;
     transition: all .25s;
 
@@ -117,7 +119,7 @@
 
     &:hover {
       cursor: pointer;
-      border: 1px solid #373544;
+      border: 1px solid $color-dark-l-10;
     }
   }
 }
