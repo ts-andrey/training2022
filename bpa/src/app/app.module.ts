@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 
 import { CdkTableModule } from '@angular/cdk/table';
 import { ScrollingModule } from '@angular/cdk/scrolling';
+import { TextFieldModule } from '@angular/cdk/text-field';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -27,15 +28,11 @@ import { PlaceLoaderComponent } from './main/place-loader/place-loader.component
 import { DeleteBtnComponent } from './main/place/delete-btn/delete-btn.component';
 import { EditBtnComponent } from './main/place/edit-btn/edit-btn.component';
 import { PlaceFormComponent } from './main/place-form/place-form.component';
-import { PlaceNameComponent } from './main/place-form/place-name/place-name.component';
-import { PlaceDescriptionComponent } from './main/place-form/place-description/place-description.component';
-import { PlaceLocationComponent } from './main/place-form/place-location/place-location.component';
 import { AppAboutComponent } from './main/app-about/app-about.component';
 import { FilterPlacesPipe } from './pipes/filter-places.pipe';
 import { SortPlacesPipe } from './pipes/sort-places.pipe';
 import { DataService } from './services/data.service';
 import { FilterPlacesService } from './services/filter-places.service';
-import { PlaceImageComponent } from './main/place-form/place-image/place-image.component';
 
 @NgModule({
   declarations: [
@@ -59,14 +56,9 @@ import { PlaceImageComponent } from './main/place-form/place-image/place-image.c
     DeleteBtnComponent,
     EditBtnComponent,
     PlaceFormComponent,
-    PlaceNameComponent,
-    PlaceDescriptionComponent,
-    PlaceLocationComponent,
     AppAboutComponent,
-
     FilterPlacesPipe,
     SortPlacesPipe,
-    PlaceImageComponent,
   ],
   imports: [
     BrowserModule,
@@ -75,7 +67,12 @@ import { PlaceImageComponent } from './main/place-form/place-image/place-image.c
     CdkTableModule,
     ScrollingModule,
   ],
-  providers: [DataService, SortDataService, FilterPlacesService],
+  providers: [
+    DataService,
+    SortDataService,
+    FilterPlacesService,
+    TextFieldModule,
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
