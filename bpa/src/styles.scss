@@ -1,6 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 // variables
 
+@import "./app/shared/styles/vars.scss";
+
 *,
 *::before,
 *::after {
@@ -33,6 +35,31 @@ html {
 body {
   height: inherit;
   font-size: 1.6rem;
+  font-family: 'Nunito', sans-serif;
+}
+
+
+/* width */
+::-webkit-scrollbar {
+  width: 11px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: $color-dark;
+  border-radius: 2px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: $color-main;
+  border-radius: 2px;
+
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: $color-attract;
 }
 
 .app {

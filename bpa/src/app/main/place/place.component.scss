@@ -1,6 +1,22 @@
 @import '../../shared/styles/vars.scss';
 
 .place-item {
+  &__row {
+
+    &_num-1,
+    &_num-2,
+    &_num-3 {
+      display: flex;
+      align-items: center;
+    }
+
+    &_num-1,
+    &_num-2 {
+      justify-content: space-between;
+
+    }
+  }
+
   &__header {
     margin-bottom: 1rem;
     font-size: 2.5rem;
@@ -8,23 +24,28 @@
   }
 
   &__info {
-    width: 85%;
+    width: 100%;
   }
 
   &__img-wrapper {
-    width: 100%;
-    margin: 1rem 0;
+    margin: 1vh 2vw 0 0;
     display: flex;
     justify-content: center;
     align-items: center;
   }
 
   &__img {
-    width: 60%;
+    max-height: 25rem;
     border-radius: 5px;
   }
 
+  &__description,
+  &__location {
+    color: $color-text;
+  }
+
   &__more-info {
+    margin-top: 1vh;
     background-color: transparent;
     color: $color-light;
     border-bottom: 1px solid $color-light;
@@ -41,23 +62,23 @@
     width: max-content;
     color: $color-main;
   }
-}
 
-.info {
-  &__item {
-    margin-bottom: 1rem;
-  }
-
-  &__insert {
-    margin-left: .5rem;
-  }
-
-}
-
-.setting {
   &__btn-wrapper {
     width: 11rem;
     display: flex;
     justify-content: space-between;
+  }
+}
+
+.info {
+  &__item {
+    width: 50%;
+    line-height: 1.3;
+    letter-spacing: 1px;
+    font-size: 110%;
+  }
+
+  &__insert {
+    margin-left: .5rem;
   }
 }

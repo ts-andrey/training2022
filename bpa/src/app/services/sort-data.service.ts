@@ -4,12 +4,14 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class SortDataService {
+  public trigger = false;
   public sortTypeLast: string = '';
   public sortType: string = 'placeRegisterDate';
   public isReversed: boolean = false;
   constructor() {}
 
   setSortType(value: string) {
+    this.trigger = !this.trigger;
     this.sortType = value;
     if (this.sortTypeLast === this.sortType) {
       this.isReversed = !this.isReversed;

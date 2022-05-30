@@ -1,32 +1,39 @@
 <div class="place-item__info info">
-  <h3 class="place-item__header info__item">{{ place.placeName }}</h3>
-  <p class="place-item__location info__item">
-    Location: <span class="info__insert">{{ place.placeLocation }},</span>
-  </p>
-  <div class="place-item__img-wrapper" *ngIf="isActive">
-    <img
-      class="place-item__img"
-      [src]="place.placeImg"
-      alt="`${{ place.placeName }} image`"
-    />
+  <div class="place-item__row_num-1">
+    <h3 class="place-item__header info__item">{{ place.placeName }}</h3>
+
+    <p class="place-item__date">
+      created at: {{ place.placeRegisterDate | date: "yyyy/MM/dd" }}
+    </p>
   </div>
-  <p class="place-item__description info__item" *ngIf="isActive">
-    Description: <span class="info__insert">{{ place.placeDescription }}</span>
-  </p>
-  <p class="place-item__author info__item" *ngIf="place.placeAuthor">
-    Author: <span class="info__insert">{{ "placeAuthor" }}</span>
-  </p>
+
+  <div class="place-item__row_num-2">
+    <p class="place-item__location info__item">
+      Location: <span class="info__insert">{{ place.placeLocation }},</span>
+    </p>
+
+    <div class="place-item__btn-wrapper">
+      <app-edit-btn class="place-item__btn" [id]="id"></app-edit-btn>
+      <app-delete-btn class="place-item__btn" [id]="id"></app-delete-btn>
+    </div>
+  </div>
+
+  <div class="place-item__row_num-3" *ngIf="isActive">
+    <div class="place-item__img-wrapper" >
+      <img
+        class="place-item__img"
+        [src]="place.placeImg"
+        alt="`${{ place.placeName }} image`"
+      />
+    </div>
+
+    <p class="place-item__description info__item">
+      Description:
+      <span class="info__insert">{{ place.placeDescription }}</span>
+    </p>
+  </div>
   <button class="place-item__more-info" (click)="onClickActive()">
     <span *ngIf="!isActive">More info...</span>
     <span *ngIf="isActive">Less info...</span>
   </button>
-</div>
-<div class="place-item__setting setting">
-  <p class="place-item__date">
-    created at: {{ place.placeRegisterDate | date: "yyyy/MM/dd" }}
-  </p>
-  <div class="setting__btn-wrapper">
-    <app-edit-btn class="place-item__btn" [id]="id"></app-edit-btn>
-    <app-delete-btn class="place-item__btn" [id]="id"></app-delete-btn>
-  </div>
 </div>
