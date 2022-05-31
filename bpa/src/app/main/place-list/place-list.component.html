@@ -1,15 +1,14 @@
 <div class="main__place-list-wrapper" *ngIf="dataService.isData">
   <cdk-virtual-scroll-viewport [itemSize]="5">
-    <table
-      class="main__place-list"
-      *cdkVirtualFor="
-        let place of dataService.places
-          | filterPlaces: filterPS.filterStr
-          | sortPlaces: sortPS.sortType:sortPS.isReversed
-      "
-    >
+    <table class="main__place-list">
       <ng-container>
-        <tr>
+        <tr
+          *cdkVirtualFor="
+            let place of dataService.places
+              | filterPlaces: filterPS.filterStr
+              | sortPlaces: sortPS.sortType:sortPS.isReversed
+          "
+        >
           <td class="place-list__item">
             <app-place
               [place]="place"

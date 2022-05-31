@@ -1,46 +1,11 @@
 <nav class="header__nav">
   <span class="header__descr">Places: </span>
-  <ul class="header__nav-list">
-    <li class="header__nav-item">
+  <ul class="header__nav-list" cdkDropList (cdkDropListDropped)="drop($event)">
+    <li class="header__nav-item" *ngFor="let link of links" cdkDrag>
       <a
-        [routerLink]="['/place-list', { placeType: 'all' }]"
+        [routerLink]="['/place-list', { placeType: link.toLowerCase() }]"
         routerLinkActive="active"
-        >All</a
-      >
-    </li>
-    <li class="header__nav-item">
-      <a
-        [routerLink]="['/place-list', { placeType: 'camping' }]"
-        routerLinkActive="active"
-        >Camping</a
-      >
-    </li>
-    <li class="header__nav-item">
-      <a
-        [routerLink]="['/place-list', { placeType: 'relax' }]"
-        routerLinkActive="active"
-        >Relax</a
-      >
-    </li>
-    <li class="header__nav-item">
-      <a
-        [routerLink]="['/place-list', { placeType: 'food' }]"
-        routerLinkActive="active"
-        >Food</a
-      >
-    </li>
-    <li class="header__nav-item">
-      <a
-        [routerLink]="['/place-list', { placeType: 'travel' }]"
-        routerLinkActive="active"
-        >Travel</a
-      >
-    </li>
-    <li class="header__nav-item">
-      <a
-        [routerLink]="['/place-list', { placeType: 'heal' }]"
-        routerLinkActive="active"
-        >Heal</a
+        >{{ link }}</a
       >
     </li>
   </ul>

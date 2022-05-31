@@ -1,15 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-nav',
   templateUrl: './nav.component.html',
-  styleUrls: ['./nav.component.scss']
+  styleUrls: ['./nav.component.scss'],
 })
-export class NavComponent implements OnInit {
+export class NavComponent {
+  public links = ['All', 'Camping', 'Relax', 'Food', 'Travel', 'Heal'];
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
+  drop(event: CdkDragDrop<string[]>) {
+    moveItemInArray(this.links, event.previousIndex, event.currentIndex);
   }
-
 }
