@@ -1,11 +1,20 @@
 @import '../../shared/styles/vars.scss';
 
+cdk-accordion {
+  width: 100%;
+}
+
+cdk-accordion-item {
+  cursor: pointer;
+}
+
 .place-item {
   &__row {
 
     &_num-1,
     &_num-2,
     &_num-3 {
+      margin-bottom: 1rem;
       display: flex;
       align-items: center;
     }
@@ -13,12 +22,10 @@
     &_num-1,
     &_num-2 {
       justify-content: space-between;
-
     }
   }
 
   &__header {
-    margin-bottom: 1rem;
     font-size: 2.5rem;
     color: $color-attract;
   }
@@ -41,6 +48,8 @@
 
   &__description,
   &__location {
+    position: relative;
+    z-index: 1;
     color: $color-text;
   }
 
@@ -58,9 +67,9 @@
   }
 
   &__date {
-    margin-bottom: 1rem;
     width: max-content;
-    color: $color-main;
+    color: $color-text;
+    letter-spacing: 1px;
   }
 
   &__btn-wrapper {

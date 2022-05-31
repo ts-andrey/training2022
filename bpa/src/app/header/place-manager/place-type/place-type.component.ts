@@ -26,6 +26,8 @@ export class PlaceTypeComponent implements OnInit, OnDestroy {
           this.placeType = 'Places to travel';
         } else if (ev.url.split('=')[1] === 'heal') {
           this.placeType = 'Healing places';
+        } else if (ev.url.split('=')[1] === 'all') {
+          this.placeType = 'All places';
         }
       }
     });

@@ -6,6 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { CdkTableModule } from '@angular/cdk/table';
 import { ScrollingModule } from '@angular/cdk/scrolling';
 import { TextFieldModule } from '@angular/cdk/text-field';
+import { CdkAccordionModule } from '@angular/cdk/accordion';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -67,6 +68,7 @@ import { FilterPlacesService } from './services/filter-places.service';
     CdkTableModule,
     ScrollingModule,
     TextFieldModule,
+    CdkAccordionModule,
   ],
   providers: [DataService, SortDataService, FilterPlacesService],
   bootstrap: [AppComponent],
