@@ -1,8 +1,10 @@
 @import '../../../shared/styles/vars.scss';
 
 .manager__create-btn {
+  height: 4rem;
+  line-height: 4rem;
+  width: 15rem;
   font-size: 1.5rem;
-  padding: .8rem 2rem;
   border-radius: .2rem;
   background-color: $color-light;
   color: $color-dark;
