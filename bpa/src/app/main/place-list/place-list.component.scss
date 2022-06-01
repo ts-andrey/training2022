@@ -5,26 +5,28 @@ app-place {
   justify-content: space-between;
 }
 
-cdk-virtual-scroll-viewport {
-  height: 60vh;
-  width: 62vw;
-}
 
 .main {
   &__place-list {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    width: 60vw;
   }
 }
 
 .place-list {
   &__item {
-    width: 60vw;
     padding: 2vh 1.5vw;
     background-color: $color-dark;
-    color: $color-light;
+
     border-radius: 1rem;
     margin-bottom: 1vh;
   }
+}
+
+th {
+  color: $color-attract;
+  font-size: 100%;
+}
+
+td {
+  color: $color-text;
 }

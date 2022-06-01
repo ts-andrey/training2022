@@ -10,6 +10,8 @@ import { CdkAccordionModule } from '@angular/cdk/accordion';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 
 import { MatRippleModule } from '@angular/material/core';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -86,6 +88,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
     BrowserAnimationsModule,
     MatRippleModule,
+    MatTableModule,
+    MatPaginatorModule,
   ],
   providers: [DataService, SortDataService, FilterPlacesService],
   bootstrap: [AppComponent],

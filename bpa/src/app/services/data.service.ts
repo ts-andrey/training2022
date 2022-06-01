@@ -1,4 +1,4 @@
-import { Subject, Subscription } from 'rxjs';
+import { Subscription, Subject } from 'rxjs';
 import { IPlace } from './../model/IPlace';
 import { Injectable, OnDestroy } from '@angular/core';
 import {
@@ -8,7 +8,7 @@ import {
   placesRelax,
   placesTravel,
 } from '../../assets/data';
-import { Router, NavigationEnd, ActivatedRoute } from '@angular/router';
+import { Router, NavigationEnd } from '@angular/router';
 
 @Injectable({
   providedIn: 'root',
@@ -26,7 +26,9 @@ export class DataService implements OnDestroy {
   private placeSubscription!: Subscription;
   private placeIndex!: number;
 
-  constructor(private router: Router, private route: ActivatedRoute) {
+  private placeSubject = new Subject<IPlace[]>();
+
+  constructor(private router: Router) {
     this.campingPlaces = placesCamping;
     this.foodPlaces = placesFood;
     this.healPlaces = placesHeal;
@@ -39,6 +41,8 @@ export class DataService implements OnDestroy {
       ...this.relaxPlaces,
       ...this.travelPlaces,
     ];
+
+    this.placeSubject.next(this.places);
 
     this.placeSubscription = this.router.events.subscribe((ev) => {
       if (ev instanceof NavigationEnd) {
@@ -64,6 +68,7 @@ export class DataService implements OnDestroy {
     } else {
       this.places = this.allPlaces;
     }
+    this.placeSubject.next(this.places);
   }
 
   private reload() {
@@ -73,6 +78,10 @@ export class DataService implements OnDestroy {
 
   ngOnDestroy(): void {
     this.placeSubscription.unsubscribe();
+  }
+
+  getPlaces() {
+    return this.placeSubject;
   }
 
   getPlace(id: string) {
