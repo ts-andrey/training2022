@@ -76,6 +76,16 @@ export class DataService implements OnDestroy {
     setTimeout(() => (this.isData = true));
   }
 
+  private updateAll() {
+    this.allPlaces = [
+      ...this.campingPlaces,
+      ...this.foodPlaces,
+      ...this.healPlaces,
+      ...this.relaxPlaces,
+      ...this.travelPlaces,
+    ];
+  }
+
   ngOnDestroy(): void {
     this.placeSubscription.unsubscribe();
   }
@@ -93,16 +103,19 @@ export class DataService implements OnDestroy {
   updatePlace(id: string, place: IPlace) {
     this.getPlace(id);
     this.places.splice(this.placeIndex, 1, place);
+    this.updateAll();
     this.placeSubject.next(this.places);
   }
   addPlace(place: IPlace) {
     place.placeRegisterDate = new Date().toDateString();
     this.places.push(place);
+    this.updateAll();
     this.placeSubject.next(this.places);
   }
   deletePlace(id: string) {
     this.getPlace(id);
     this.places.splice(this.placeIndex, 1);
+    this.updateAll();
     this.reload();
     this.placeSubject.next(this.places);
   }

@@ -1,5 +1,12 @@
 import { Component, ViewChild, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
+import {
+  animate,
+  state,
+  style,
+  transition,
+  trigger,
+} from '@angular/animations';
 
 import { IPlace } from './../../model/IPlace';
 import { DataService } from './../../services/data.service';
@@ -12,11 +19,22 @@ import { MatTableDataSource } from '@angular/material/table';
   selector: 'app-place-list',
   templateUrl: './place-list.component.html',
   styleUrls: ['./place-list.component.scss'],
+  animations: [
+    trigger('detailExpand', [
+      state('collapsed', style({ height: '0px', minHeight: '0' })),
+      state('expanded', style({ height: '*' })),
+      transition(
+        'expanded <=> collapsed',
+        animate('225ms cubic-bezier(0.4, 0.0, 0.2, 1)')
+      ),
+    ]),
+  ],
 })
 export class PlaceListComponent implements OnInit, OnDestroy {
   displayedColumns: string[] = ['name', 'country', 'date'];
   dataSource!: MatTableDataSource<IPlace>;
   subscriber!: Subscription;
+  expandedElement!: IPlace | null;
   constructor(public dataService: DataService) {}
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
