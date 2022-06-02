@@ -12,6 +12,9 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
 import { MatRippleModule } from '@angular/material/core';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatSortModule } from '@angular/material/sort';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -90,6 +93,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatRippleModule,
     MatTableModule,
     MatPaginatorModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSortModule,
   ],
   providers: [DataService, SortDataService, FilterPlacesService],
   bootstrap: [AppComponent],

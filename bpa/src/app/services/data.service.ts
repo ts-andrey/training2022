@@ -93,15 +93,18 @@ export class DataService implements OnDestroy {
   updatePlace(id: string, place: IPlace) {
     this.getPlace(id);
     this.places.splice(this.placeIndex, 1, place);
+    this.placeSubject.next(this.places);
   }
   addPlace(place: IPlace) {
     place.placeRegisterDate = new Date().toDateString();
     this.places.push(place);
+    this.placeSubject.next(this.places);
   }
   deletePlace(id: string) {
     this.getPlace(id);
     this.places.splice(this.placeIndex, 1);
     this.reload();
+    this.placeSubject.next(this.places);
   }
 }
 

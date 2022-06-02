@@ -1,11 +1,11 @@
-import { DataSource } from '@angular/cdk/collections';
-import { IPlace } from './../../model/IPlace';
-import { SortDataService } from './../../services/sort-data.service';
-import { FilterPlacesService } from './../../services/filter-places.service';
-import { DataService } from './../../services/data.service';
 import { Component, ViewChild, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
+
+import { IPlace } from './../../model/IPlace';
+import { DataService } from './../../services/data.service';
+
 import { MatPaginator } from '@angular/material/paginator';
+import { MatSort, Sort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 
 @Component({
@@ -17,21 +17,16 @@ export class PlaceListComponent implements OnInit, OnDestroy {
   displayedColumns: string[] = ['name', 'country', 'date'];
   dataSource!: MatTableDataSource<IPlace>;
   subscriber!: Subscription;
-  constructor(
-    public dataService: DataService,
-    public filterPS: FilterPlacesService,
-    public sortPS: SortDataService
-  ) {
-   
-  }
+  constructor(public dataService: DataService) {}
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
+  @ViewChild(MatSort) sort!: MatSort;
 
   ngOnInit(): void {
     this.dataSource = new MatTableDataSource<IPlace>(this.dataService.places);
     this.subscriber = this.dataService.getPlaces().subscribe((data) => {
       this.dataSource = new MatTableDataSource<IPlace>(data);
-      this.dataSource.paginator = this.paginator;
+      this.addDataFeatures();
     });
   }
 
@@ -40,6 +35,46 @@ export class PlaceListComponent implements OnInit, OnDestroy {
   }
 
   ngAfterViewInit() {
-    this.dataSource.paginator = this.paginator;
+    this.addDataFeatures();
   }
+
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+
+    if (this.dataSource.paginator) {
+      this.dataSource.paginator.firstPage();
+    }
+  }
+
+  private addDataFeatures() {
+    this.dataSource.paginator = this.paginator;
+    this.dataSource.sort = this.sort;
+  }
+
+  sortData(sort: Sort) {
+    this.dataSource = new MatTableDataSource<IPlace>(
+      this.dataService.places.sort((a, b) => {
+        const isAsc = sort.direction === 'asc';
+        switch (sort.active) {
+          case 'name':
+            return compare(a.placeName, b.placeName, isAsc);
+          case 'country':
+            return compare(a.placeLocation, b.placeLocation, isAsc);
+          case 'date':
+            return compare(
+              <string>a.placeRegisterDate,
+              <string>b.placeRegisterDate,
+              isAsc
+            );
+          default:
+            return 0;
+        }
+      })
+    );
+    this.addDataFeatures();
+  }
+}
+function compare(a: string, b: string, isAsc: boolean) {
+  return a.localeCompare(b) * (isAsc ? 1 : -1);
 }

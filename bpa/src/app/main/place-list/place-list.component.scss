@@ -30,3 +30,26 @@ th {
 td {
   color: $color-text;
 }
+
+.mat-row .mat-cell {
+  border-bottom: 1px solid transparent;
+  border-top: 1px solid transparent;
+  cursor: pointer;
+}
+
+.mat-row:hover .mat-cell {
+  border-color: $color-attract;
+}
+
+.main__place-filter {
+  width: 60vw;
+  background: $color-dark;
+  color: $color-attract;
+
+  &_label,
+  &_input {
+    margin-left: 2.5rem;
+  }
+
+
+}
