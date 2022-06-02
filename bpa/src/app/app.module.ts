@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
+import { HttpClientModule } from "@angular/common/http";
 
 import { CdkTableModule } from '@angular/cdk/table';
 import { ScrollingModule } from '@angular/cdk/scrolling';
@@ -47,6 +48,7 @@ import { DataService } from './services/data.service';
 import { FilterPlacesService } from './services/filter-places.service';
 import { SortDataService } from './services/sort-data.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { WeatherComponent } from './weather/weather.component';
 
 @NgModule({
   declarations: [
@@ -77,11 +79,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
     FilterPlacesPipe,
     SortPlacesPipe,
+    WeatherComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    HttpClientModule,
 
     CdkTableModule,
     ScrollingModule,

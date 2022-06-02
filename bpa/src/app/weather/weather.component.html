@@ -1,0 +1,28 @@
+<div *ngIf="data">
+  <h3 class="weather__title">
+    {{ "Weather for: " + data.city.name + " (" + data.city.country + ")" }}
+  </h3>
+  <ul class="weather__list">
+    <li class="weather__item" *ngFor="let item of data.list">
+      <p class="weather__info">
+        time: <span>{{ item.dt_txt }}</span>
+      </p>
+      <p class="weather__info">
+        weather: <span>{{ item.weather[0].main }}</span>
+        <span> ({{ item.weather[0].description }})</span>
+      </p>
+      <p class="weather__info">
+        temperature: <span>{{ item.main.temp + "℃" }}</span>
+      </p>
+      <p class="weather__info">
+        feels like: <span>{{ item.main.feels_like + "℃" }}</span>
+      </p>
+      <p class="weather__info">
+        humidity: <span>{{ item.main.humidity + "%" }}</span>
+      </p>
+      <p class="weather__info">
+        wind speed: <span>{{ item.wind.speed + " m/s" }}</span>
+      </p>
+    </li>
+  </ul>
+</div>

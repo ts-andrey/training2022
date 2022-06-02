@@ -1,26 +1,3 @@
-<!-- <div class="main__place-list-wrapper" *ngIf="dataService.isData">
-  <cdk-virtual-scroll-viewport [itemSize]="5">
-    <table class="main__place-list">
-      <ng-container>
-        <tr
-          *cdkVirtualFor="
-            let place of dataService.places
-              | filterPlaces: filterPS.filterStr
-              | sortPlaces: sortPS.sortType:sortPS.isReversed
-          "
-        >
-          <td class="place-list__item">
-            <app-place
-              [place]="place"
-              [id]="place.placeName + place.placeLocation"
-            ></app-place>
-          </td>
-        </tr>
-      </ng-container>
-    </table>
-  </cdk-virtual-scroll-viewport>
-</div> -->
-
 <mat-form-field class="main__place-filter" appearance="standard">
   <mat-label class="main__place-filter_label">Filter places</mat-label>
   <input
@@ -41,7 +18,9 @@
   >
     <!-- Name Column -->
     <ng-container matColumnDef="name">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header="name" >Name</th>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header="name">
+        {{ "name" | titlecase }}
+      </th>
       <td mat-cell *matCellDef="let place">
         {{ place.placeName }}
       </td>
@@ -49,7 +28,9 @@
 
     <!-- Weight Column -->
     <ng-container matColumnDef="country">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header="country">Country</th>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header="country">
+        {{ "country" | titlecase }}
+      </th>
       <td mat-cell *matCellDef="let place">
         {{ place.placeLocation }}
       </td>
@@ -57,7 +38,9 @@
 
     <!-- Symbol Column -->
     <ng-container matColumnDef="date">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header="date">Date</th>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header="date">
+        {{ "date" | titlecase }}
+      </th>
       <td mat-cell *matCellDef="let place">
         {{ place.placeRegisterDate | date: "yyyy-MM-dd" }}
       </td>
