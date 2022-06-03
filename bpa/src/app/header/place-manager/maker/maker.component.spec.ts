@@ -8,9 +8,8 @@ describe('MakerComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ MakerComponent ]
-    })
-    .compileComponents();
+      declarations: [MakerComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

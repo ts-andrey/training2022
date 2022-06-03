@@ -8,9 +8,8 @@ describe('EditBtnComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ EditBtnComponent ]
-    })
-    .compileComponents();
+      declarations: [EditBtnComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

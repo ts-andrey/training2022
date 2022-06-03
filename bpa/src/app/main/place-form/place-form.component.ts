@@ -2,7 +2,7 @@ import { DataService } from './../../services/data.service';
 import { Location } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { IPlace } from './../../model/IPlace';
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { CdkTextareaAutosize } from '@angular/cdk/text-field';
 
@@ -11,8 +11,7 @@ import { CdkTextareaAutosize } from '@angular/cdk/text-field';
   templateUrl: './place-form.component.html',
   styleUrls: ['./place-form.component.scss'],
 })
-export class PlaceFormComponent implements OnInit {
-  
+export class PlaceFormComponent {
   @ViewChild('autosize') autosize!: CdkTextareaAutosize;
 
   public place: IPlace = {
@@ -41,7 +40,6 @@ export class PlaceFormComponent implements OnInit {
       );
     }
   }
-  ngOnInit(): void {}
 
   private updatePlace(data: {
     description: string;

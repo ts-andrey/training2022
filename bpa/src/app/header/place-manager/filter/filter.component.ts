@@ -1,15 +1,13 @@
 import { FilterPlacesService } from './../../../services/filter-places.service';
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-filter',
   templateUrl: './filter.component.html',
   styleUrls: ['./filter.component.scss'],
 })
-export class FilterComponent implements OnInit {
+export class FilterComponent {
   constructor(private filterPlaceService: FilterPlacesService) {}
-
-  ngOnInit(): void {}
 
   filterData(value: string) {
     this.filterPlaceService.filterStr = value;

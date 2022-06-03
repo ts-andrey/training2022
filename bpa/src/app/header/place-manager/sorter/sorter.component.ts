@@ -1,15 +1,14 @@
 import { SortDataService } from './../../../services/sort-data.service';
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-sorter',
   templateUrl: './sorter.component.html',
   styleUrls: ['./sorter.component.scss'],
 })
-export class SorterComponent implements OnInit {
+export class SorterComponent {
   constructor(private sortDataService: SortDataService) {}
 
-  ngOnInit(): void {}
   onClickSort(sortType: string) {
     this.sortDataService.setSortType(sortType);
   }

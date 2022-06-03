@@ -8,10 +8,10 @@ import { NavigationEnd, Router } from '@angular/router';
   styleUrls: ['./place-type.component.scss'],
 })
 export class PlaceTypeComponent implements OnInit, OnDestroy {
+  public placeType = 'Camping places';
   private subscription: Subscription = new Subscription();
-  constructor(private router: Router) {}
 
-  placeType = 'Camping places';
+  constructor(private router: Router) {}
 
   ngOnInit(): void {
     this.subscription = this.router.events.subscribe((ev) => {

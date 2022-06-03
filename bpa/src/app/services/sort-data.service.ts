@@ -8,7 +8,6 @@ export class SortDataService {
   public sortTypeLast: string = '';
   public sortType: string = 'placeRegisterDate';
   public isReversed: boolean = false;
-  constructor() {}
 
   setSortType(value: string) {
     this.trigger = !this.trigger;

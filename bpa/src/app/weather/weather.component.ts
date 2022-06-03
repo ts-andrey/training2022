@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { IWeather } from './IWeather';
 
@@ -7,7 +7,7 @@ import { IWeather } from './IWeather';
   templateUrl: './weather.component.html',
   styleUrls: ['./weather.component.scss'],
 })
-export class WeatherComponent implements OnInit {
+export class WeatherComponent {
   private WEATHER_API = 'd1f7d9e73c7c7b55733acba3939aaf2e';
   private LATITUDE = '52.4313';
   private LONGITUDE = '30.9937';
@@ -24,8 +24,4 @@ export class WeatherComponent implements OnInit {
       console.log(error);
     }
   }
-
-  ngOnInit(): void {}
-
-  ngAfterViewInit() {}
 }

@@ -8,9 +8,8 @@ describe('SorterComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SorterComponent ]
-    })
-    .compileComponents();
+      declarations: [SorterComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

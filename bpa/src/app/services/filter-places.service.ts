@@ -5,5 +5,4 @@ import { Injectable } from '@angular/core';
 })
 export class FilterPlacesService {
   filterStr: string = '';
-  constructor() {}
 }

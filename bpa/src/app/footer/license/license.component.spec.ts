@@ -8,9 +8,8 @@ describe('LicenseComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ LicenseComponent ]
-    })
-    .compileComponents();
+      declarations: [LicenseComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

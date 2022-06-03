@@ -1,15 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-place-loader',
   templateUrl: './place-loader.component.html',
-  styleUrls: ['./place-loader.component.scss']
+  styleUrls: ['./place-loader.component.scss'],
 })
-export class PlaceLoaderComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
-}
+export class PlaceLoaderComponent {}
