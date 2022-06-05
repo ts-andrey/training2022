@@ -4,10 +4,44 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Data manipulation</title>
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
+    <header>
+      <h1 class="title">You can choose a title and/or category and then fetch data</h1>
+      <form class="form" id="formData">
+        <div class="select-wrapper">
+          <div>
+            <h3>Title</h3>
+            <select name="title" id="title" onselect="getData(event)">
+              <option value="cat">cat</option>
+              <option value="dog">dog</option>
+              <option value="tenders">tenders</option>
+              <option value="file">file</option>
+              <option value="crypto">crypto</option>
+            </select>
+          </div>
+          <div>
+            <h3>Category</h3>
+            <select name="category" id="category" onselect="getData(event)">
+              <option value="animals">animals</option>
+              <option value="anime">anime</option>
+              <option value="books">books</option>
+              <option value="food">food</option>
+              <option value="health">health</option>
+              <option value="video">video</option>
+              <option value="weather">weather</option>
+            </select>
+          </div>
+        </div>
+        <div class="btn-wrapper">
+          <button type="submit" onclick="getData(event, 'title')">get data by title</button>
+          <button type="submit" onclick="getData(event, 'category')">get data by category</button>
+          <button type="submit" onclick="getData(event, 'both')">get data by title + category</button>
+        </div>
+      </form>
+    </header>
     <script src="./index.js"></script>
   </body>
 </html>
