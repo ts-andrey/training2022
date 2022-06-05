@@ -5,6 +5,7 @@
     cdkDropList
     cdkDropListOrientation="horizontal"
     (cdkDropListDropped)="drop($event)"
+    (click)="setActiveLink($event)"
   >
     <li
       class="header__nav-item"

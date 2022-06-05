@@ -18,12 +18,17 @@
     padding: 0.25rem .5rem;
     background-color: $color-dark-l-10;
     border-radius: 5px;
+    user-select: none;
     transition: all .25s;
 
     &:hover {
       cursor: pointer;
       color: $color-attract;
       background-color: $color-dark-l-20;
+    }
+
+    &_active {
+      color: $color-attract;
     }
   }
 }
