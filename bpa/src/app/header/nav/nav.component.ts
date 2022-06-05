@@ -7,7 +7,7 @@ import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
   styleUrls: ['./nav.component.scss'],
 })
 export class NavComponent {
-  public links = ['All', 'Camping', 'Relax', 'Food', 'Travel', 'Heal'];
+  public links = ['all', 'camping', 'relax', 'food', 'travel', 'heal'];
 
   drop(event: CdkDragDrop<string[]>) {
     moveItemInArray(this.links, event.previousIndex, event.currentIndex);

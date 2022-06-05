@@ -13,9 +13,9 @@
       cdkDragLockAxis="x"
     >
       <a
-        [routerLink]="['/place-list', { placeType: link.toLowerCase() }]"
+        [routerLink]="['/place-list', { placeType: link }]"
         routerLinkActive="active"
-        >{{ link }}</a
+        >{{ link | titlecase }}</a
       >
     </li>
   </ul>
