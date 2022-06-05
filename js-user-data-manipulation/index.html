@@ -10,7 +10,17 @@
   <body>
     <header>
       <h1 class="title">You can choose a title and/or category and then fetch data</h1>
-      <form class="form" id="formData">
+      <div class="theme__wrapper">
+        <div class="theme__dark-wrapper">
+          <label class="theme__dark-label" for="theme-dark">dark theme</label>
+          <input class="theme__dark-wrapper" type="radio" name="theme" id="theme-dark" />
+        </div>
+        <div class="theme__light-wrapper">
+          <label class="theme__light-label" for="theme-light">light theme</label>
+          <input class="theme__light-wrapper" type="radio" name="theme" id="theme-light" />
+        </div>
+      </div>
+      <form class="form form__data" id="formData">
         <div class="select-wrapper">
           <div>
             <h3>Title</h3>
@@ -40,6 +50,11 @@
           <button type="submit" onclick="getData(event, 'category')">get data by category</button>
           <button type="submit" onclick="getData(event, 'both')">get data by title + category</button>
         </div>
+      </form>
+      <form class="user-form">
+        <label class="user-form__label" for="username">User name:</label>
+        <input class="user-form__input" type="text" id="username" placeholder="Your name" />
+        <button class="user-form__btn" type="submit">Set name</button>
       </form>
     </header>
     <script src="./index.js"></script>
