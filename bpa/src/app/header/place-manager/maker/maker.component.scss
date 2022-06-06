@@ -1,0 +1,17 @@
+@import '../../../shared/styles/vars.scss';
+
+.manager__create-btn {
+  height: 6rem;
+  line-height: 6rem;
+  width: 25rem;
+  font-size: 1.8rem;
+  border-radius: .2rem;
+  background-color: $color-light;
+  color: $color-dark;
+  transition: all .25s;
+
+  &:hover {
+    cursor: pointer;
+    background-color: $color-light-d-10;
+  }
+}

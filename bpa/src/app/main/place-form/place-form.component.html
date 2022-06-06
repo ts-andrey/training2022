@@ -1,0 +1,93 @@
+<form
+  class="main__place-form place-form"
+  (ngSubmit)="onSubmit(form)"
+  #form="ngForm"
+>
+  <div class="place-form__data-short">
+    <div class="place-form__name-wrapper">
+      <label for="place-form__name" class="place-form__name-label"
+        >Name of the place</label
+      >
+      <input
+        type="text"
+        id="place-form__name"
+        class="place-form__name"
+        placeholder="place name"
+        autocomplete="off"
+        [ngModel]="place?.placeName"
+        name="name"
+      />
+    </div>
+
+    <div class="place-form__location-wrapper">
+      <label for="place-form__location" class="place-form__location-label"
+        >Location of the place</label
+      >
+      <input
+        type="text"
+        id="place-form__location"
+        class="place-form__location"
+        placeholder="location name"
+        autocomplete="off"
+        [ngModel]="place?.placeLocation"
+        name="location"
+      />
+    </div>
+    <div class="place-form__image-wrapper">
+      <label for="place-form__image" class="place-form__image-label"
+        >Image url of the place</label
+      >
+      <input
+        type="text"
+        id="place-form__image"
+        class="place-form__image"
+        placeholder="image url"
+        autocomplete="off"
+        [ngModel]="place?.placeImg"
+        name="imgUrl"
+      />
+    </div>
+  </div>
+  <div class="place-form__data-long">
+    <div class="place-form__description-wrapper">
+      <label for="place-form__description" class="place-form__description-label"
+        >Description of the place</label
+      >
+      <textarea
+        class="place-form__description"
+        id="place-form__description"
+        cols="40"
+        rows="13"
+        placeholder="place description"
+        autocomplete="off"
+        cdkTextareaAutosize
+        #autosize="cdkTextareaAutosize"
+        cdkAutosizeMinRows="3"
+        cdkAutosizeMaxRows="12"
+        [ngModel]="place?.placeDescription"
+        name="description"
+      ></textarea>
+    </div>
+
+    <div class="place-form__controls">
+      <button
+        type="submit"
+        class="place-form__btn"
+        matRipple
+        [matRippleColor]="'rgba(0,0,0,0.3)'"
+      >
+        save
+      </button>
+      <button
+        type="reset"
+        class="place-form__btn"
+        [routerLink]="['/place-list']"
+        matRipple
+        [matRippleColor]="'rgba(0,0,0,0.3)'"
+        (click)="goBack($event)"
+      >
+        cancel
+      </button>
+    </div>
+  </div>
+</form>

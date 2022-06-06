@@ -1,0 +1,15 @@
+@import '../../shared/styles/vars.scss';
+
+.place-list__loader {
+  margin-top: 2rem;
+  padding: .7rem 2.1rem;
+  background-color: $color-main;
+  color: $color-dark;
+  border-radius: 1rem;
+  transition: all .25s;
+
+  &:hover {
+    cursor: pointer;
+    background-color: $color-main-l-10;
+  }
+}

@@ -1,0 +1,89 @@
+@import '../../shared/styles/vars.scss';
+
+app-place {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.main {
+  &__place-list {
+    width: 60vw;
+  }
+}
+
+.place-list {
+  &__item {
+    padding: 2vh 1.5vw;
+    background-color: $color-dark;
+
+    border-radius: 1rem;
+    margin-bottom: 1vh;
+  }
+
+  &__detail-row {
+    height: 0;
+  }
+
+  &__element-detail {
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+
+  &__img-wrapper {
+    padding: 1vh 0;
+    margin-right: 1vw;
+  }
+
+  &__img {
+    height: 25rem;
+    border-radius: .5rem;
+  }
+
+  &__description {
+    padding: 1vh 0;
+  }
+
+  &__btn-wrapper {
+    top: 1vh;
+    right: 0;
+    position: absolute;
+  }
+
+}
+
+app-delete-btn {
+  margin-left: 1rem;
+}
+
+th {
+  color: $color-attract;
+  font-size: 100%;
+}
+
+td {
+  color: $color-text;
+}
+
+.mat-row .mat-cell {
+  border-bottom: 1px solid transparent;
+  border-top: 1px solid transparent;
+  cursor: pointer;
+}
+
+.mat-row:hover .mat-cell {
+  border-color: $color-attract;
+}
+
+.main__place-filter {
+  width: 60vw;
+  background: $color-dark;
+  color: $color-attract;
+
+  &_label,
+  &_input {
+    margin-left: 2.5rem;
+  }
+}

@@ -1,0 +1,128 @@
+@import '../../shared/styles/vars.scss';
+
+.main__place-form {
+  width: 40vw;
+  padding: 3vh 1vw;
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid $color-dark;
+  background-color: $color-main-l-20;
+  border-radius: 1rem;
+}
+
+.place-form {
+  &__data-short {
+    width: 48%;
+  }
+
+  &__controls {
+    margin-top: 2vh;
+    display: flex;
+  }
+
+  &__name-wrapper {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2vh;
+  }
+
+  &__name-label {
+    margin-bottom: .5vh;
+  }
+
+  &__name {
+    padding: .5rem 1.5rem;
+    background-color: $color-light;
+    border: 1px solid $color-dark-l-40;
+    border-radius: .2rem;
+
+    &:focus {
+      border: 1px solid $color-dark-l-10;
+    }
+  }
+
+  &__location-wrapper {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2vh;
+  }
+
+  &__location-label {
+    margin-bottom: .5vh;
+  }
+
+  &__location {
+    padding: .5rem 1.5rem;
+    background-color: $color-light;
+    border: 1px solid $color-dark-l-40;
+    border-radius: .2rem;
+
+    &:focus {
+      border: 1px solid $color-dark-l-10;
+    }
+  }
+
+  &__image-wrapper {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2vh;
+  }
+
+  &__image-label {
+    margin-bottom: .5vh;
+  }
+
+  &__image {
+    padding: .5rem 1.5rem;
+    background-color: $color-light;
+    border: 1px solid $color-dark-l-40;
+    border-radius: .2rem;
+
+    &:focus {
+      border: 1px solid $color-dark-l-10;
+    }
+  }
+
+  &__description-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__description-label {
+    margin-bottom: .5vh;
+  }
+
+  &__description {
+    padding: .5rem 1.5rem;
+    background-color: $color-light;
+    border-radius: .2rem;
+    outline: none;
+    overflow-y: auto;
+    resize: none;
+
+    border: 1px solid $color-dark-l-40;
+
+    &:focus {
+      border: 1px solid $color-dark-l-10;
+    }
+  }
+
+  &__btn {
+    height: fit-content;
+    padding: .5rem 1.5rem;
+    border-radius: .2rem;
+    background-color: $color-light;
+    border: 1px solid $color-dark-l-40;
+    display: block;
+    transition: all .25s;
+
+    &:first-of-type {
+      margin-right: 1rem;
+    }
+
+    &:hover {
+      cursor: pointer;
+      border: 1px solid $color-dark-l-10;
+    }
+  }
+}

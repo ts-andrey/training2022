@@ -1,0 +1,17 @@
+.header {
+  &__top-line {
+    margin-bottom: 1vh;
+    display: flex;
+    align-items: center;
+  }
+
+  &__title-wrapper {
+    text-align: center;
+  }
+
+  &__place-manager {
+    margin-top: 2vh;
+    display: flex;
+    align-items: center;
+  }
+}

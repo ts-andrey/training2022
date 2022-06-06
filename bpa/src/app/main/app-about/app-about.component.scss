@@ -1,0 +1,42 @@
+@import '../../shared/styles/vars.scss';
+
+.about {
+  &__wrapper {
+    width: 45vw;
+    margin-top: 10vh;
+  }
+
+  &__header {
+    font-size: 3.7rem;
+    margin-bottom: 5vh;
+  }
+
+  &__text {
+    margin-bottom: 5vh;
+    font-size: 2.2rem;
+    letter-spacing: 0.7px;
+    position: relative;
+    padding-left: 1rem;
+    border-left: 4px solid $color-dark;
+
+    &:last-of-type {
+      &::after {
+        border-bottom: none;
+      }
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -2.5vh;
+      left: 0;
+      width: 100%;
+      border-bottom: 1px dashed $color-dark;
+    }
+  }
+}
+
+:host {
+  display: flex;
+  justify-content: center;
+}

@@ -1,0 +1,93 @@
+@import '../../shared/styles/vars.scss';
+
+cdk-accordion {
+  width: 100%;
+}
+
+cdk-accordion-item {
+  cursor: pointer;
+}
+
+.place-item {
+  &__row {
+
+    &_num-1,
+    &_num-2,
+    &_num-3 {
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+    }
+
+    &_num-1,
+    &_num-2 {
+      justify-content: space-between;
+    }
+  }
+
+  &__header {
+    font-size: 2.5rem;
+    color: $color-attract;
+  }
+
+  &__info {
+    width: 100%;
+  }
+
+  &__img-wrapper {
+    margin: 1vh 2vw 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__img {
+    max-height: 25rem;
+    border-radius: 5px;
+  }
+
+  &__description,
+  &__location {
+    position: relative;
+    z-index: 1;
+    color: $color-text;
+  }
+
+  &__more-info {
+    margin-top: 1vh;
+    background-color: transparent;
+    color: $color-light;
+    border-bottom: 1px solid $color-light;
+    transition: all .25s;
+
+    &:hover {
+      cursor: pointer;
+      color: $color-light-d-10;
+    }
+  }
+
+  &__date {
+    width: max-content;
+    color: $color-text;
+    letter-spacing: 1px;
+  }
+
+  &__btn-wrapper {
+    width: 11rem;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.info {
+  &__item {
+    width: 50%;
+    line-height: 1.3;
+    letter-spacing: 1px;
+    font-size: 110%;
+  }
+
+  &__insert {
+    margin-left: .5rem;
+  }
+}

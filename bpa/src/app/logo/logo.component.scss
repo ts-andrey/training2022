@@ -1,0 +1,15 @@
+.logo {
+  &__wrapper {
+    transition: all .25s;
+    margin-left: 15vw;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &__img {
+    height: 7rem;
+    border-radius: 1.5rem;
+  }
+}

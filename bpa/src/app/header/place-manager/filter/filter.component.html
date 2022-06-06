@@ -1,0 +1,11 @@
+<div class="manager__filter-wrapper">
+  <label for="place-filter" class="manager__filter-label">filter places</label>
+  <input
+    id="place-filter"
+    class="manager__filter"
+    type="text"
+    placeholder="filter places"
+    #inputFilter
+    (keyup)="filterData(inputFilter.value)"
+  />
+</div>

@@ -1,0 +1,20 @@
+<nav class="header__nav">
+  <span class="header__descr">Places: </span>
+  <ul
+    class="header__nav-list"
+    cdkDropList
+    cdkDropListOrientation="horizontal"
+    (cdkDropListDropped)="drop($event)"
+  >
+    <li
+      class="header__nav-item"
+      *ngFor="let link of links"
+      cdkDrag
+      cdkDragLockAxis="x"
+    >
+      <a [routerLink]="['/place-list/' + link]" routerLinkActive="header__nav-item_active">{{
+        link | titlecase
+      }}</a>
+    </li>
+  </ul>
+</nav>

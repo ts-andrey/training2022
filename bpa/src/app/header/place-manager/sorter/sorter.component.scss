@@ -1,0 +1,26 @@
+@import '../../../shared/styles/vars.scss';
+
+.manager {
+  &__sorter-wrapper {
+    display: flex;
+  }
+
+  &__descr {
+    margin-right: 1rem;
+    border-bottom: 1px solid $color-main;
+  }
+
+  &__sorter {
+    margin-right: 2rem;
+    transition: all .25s;
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+
+    &:hover {
+      cursor: pointer;
+      color: $color-attract;
+    }
+  }
+}

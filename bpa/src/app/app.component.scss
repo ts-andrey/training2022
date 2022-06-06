@@ -1,0 +1,27 @@
+@import "./shared/styles/vars.scss";
+
+.app {
+  &__header-wrapper {
+    background-color: $color-dark;
+    color: $color-main;
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+  }
+
+  &__main-wrapper {
+    flex-grow: 1;
+    background-color: $color-light;
+    color: $color-dark;
+    position: relative;
+  }
+
+  &__footer-wrapper {
+    background-color: $color-dark-l-5;
+    color: $color-light;
+  }
+}
+
+// helper classes
+.root-padding {
+  padding: 2vh 7vw;
+}

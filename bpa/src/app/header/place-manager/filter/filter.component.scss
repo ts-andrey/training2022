@@ -1,0 +1,15 @@
+@import '../../../shared/styles/vars.scss';
+
+.manager {
+  &__filter {
+    padding: .5rem 1rem;
+    width: 30rem;
+    font-size: 1.4rem;
+    border-radius: .2rem;
+    background-color: $color-light;
+  }
+
+  &__filter-label {
+    margin-right: 1.5rem;
+  }
+}
