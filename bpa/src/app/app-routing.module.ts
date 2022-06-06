@@ -6,7 +6,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   { path: '', component: AppAboutComponent },
-  { path: 'place-list', component: PlaceListComponent },
+  { path: 'place-list/:placeType', component: PlaceListComponent },
   { path: 'place-form', component: PlaceFormComponent },
 ];
 

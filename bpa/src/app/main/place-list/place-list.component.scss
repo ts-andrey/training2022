@@ -29,6 +29,7 @@ app-place {
     overflow: hidden;
     display: flex;
     align-items: center;
+    position: relative;
   }
 
   &__img-wrapper {
@@ -45,6 +46,16 @@ app-place {
     padding: 1vh 0;
   }
 
+  &__btn-wrapper {
+    top: 1vh;
+    right: 0;
+    position: absolute;
+  }
+
+}
+
+app-delete-btn {
+  margin-left: 1rem;
 }
 
 th {

@@ -5,7 +5,6 @@
     cdkDropList
     cdkDropListOrientation="horizontal"
     (cdkDropListDropped)="drop($event)"
-    (click)="setActiveLink($event)"
   >
     <li
       class="header__nav-item"
@@ -13,11 +12,9 @@
       cdkDrag
       cdkDragLockAxis="x"
     >
-      <a
-        [routerLink]="['/place-list', { placeType: link }]"
-        routerLinkActive="active"
-        >{{ link | titlecase }}</a
-      >
+      <a [routerLink]="['/place-list/' + link]" routerLinkActive="header__nav-item_active">{{
+        link | titlecase
+      }}</a>
     </li>
   </ul>
 </nav>

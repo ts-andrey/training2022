@@ -47,7 +47,7 @@ export class DataService implements OnDestroy {
     this.placeSubscription = this.router.events.subscribe((ev) => {
       if (ev instanceof NavigationEnd) {
         if (!ev.url.includes('mode')) {
-          const placeType = ev.url.split('=')[1];
+          const placeType = <string>ev.url.split('/').slice(-1).shift();
           this.setPlaces(placeType);
         }
       }
