@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Data manipulation</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <header>
+      <h1 class="title"></h1>
+      <h2 class="title">You can choose a title and/or category and then fetch data</h2>
+      <div class="user-theme__wrapper">
+        <div class="theme__wrapper">
+          <div class="theme__dark-wrapper">
+            <label class="theme__label" for="theme-dark">dark theme</label>
+            <input class="theme__input" type="radio" name="theme" id="theme-dark" value="dark" />
+          </div>
+          <div class="theme__light-wrapper">
+            <label class="theme__label" for="theme-light">light theme</label>
+            <input class="theme__input" type="radio" name="theme" id="theme-light" value="light" />
+          </div>
+        </div>
+        <form class="user-form" autocomplete="off">
+          <label class="user-form__label" for="username">User name:</label>
+          <input class="user-form__input" type="text" id="username" placeholder="Your name" autocomplete="off" />
+          <button class="user-form__btn" type="submit">Set name</button>
+        </form>
+      </div>
+      <form class="form form__data" id="formData">
+        <div class="select-wrapper">
+          <div>
+            <h3>Title</h3>
+            <select name="title" id="title" onselect="getData(event)">
+              <option value="cat">cat</option>
+              <option value="dog">dog</option>
+              <option value="tenders">tenders</option>
+              <option value="file">file</option>
+              <option value="crypto">crypto</option>
+            </select>
+          </div>
+          <div>
+            <h3>Category</h3>
+            <select name="category" id="category" onselect="getData(event)">
+              <option value="animals">animals</option>
+              <option value="anime">anime</option>
+              <option value="books">books</option>
+              <option value="food">food</option>
+              <option value="health">health</option>
+              <option value="video">video</option>
+              <option value="weather">weather</option>
+            </select>
+          </div>
+        </div>
+        <div class="btn-wrapper">
+          <button type="submit" onclick="getData(event, 'title')">get data by title</button>
+          <button type="submit" onclick="getData(event, 'category')">get data by category</button>
+          <button type="submit" onclick="getData(event, 'both')">get data by title + category</button>
+        </div>
+      </form>
+    </header>
+    <script src="./index.js"></script>
+  </body>
+</html>
