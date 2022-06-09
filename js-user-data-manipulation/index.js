@@ -1,3 +1,81 @@
+// user name showing
+
+const userHeader = document.querySelector('h1');
+const input = document.querySelector('.user-form__input');
+const btn = document.querySelector('.user-form__btn');
+let username;
+
+try {
+  username = localStorage.getItem('username');
+  setUserHeader();
+} catch (error) {
+  console.log(error);
+}
+
+btn.addEventListener('click', event => {
+  event.preventDefault();
+  console.log(input.value);
+  username = input.value;
+  localStorage.setItem('username', username);
+  setUserHeader();
+});
+
+// setUserHeader();
+
+function setUserHeader() {
+  if (username) {
+    userHeader.innerText = `Hello ${username}`;
+  } else {
+    userHeader.innerText = '';
+  }
+}
+
+// theme changing
+
+const themeWrapper = document.querySelector('.theme__wrapper');
+const themeInputs = document.querySelectorAll('.theme__input');
+const THEME_LIGHT = 'theme__light';
+const THEME_DARK = 'theme__dark';
+let theme;
+
+themeWrapper.addEventListener('click', ev => {
+  ev.stopImmediatePropagation();
+  themeInputs.forEach(el => {
+    if (el.checked) {
+      theme = el.value;
+      setTheme();
+    }
+  });
+});
+
+try {
+  theme = localStorage.getItem('theme');
+  if (theme === 'dark') {
+    themeInputs[0].checked = true;
+  } else if (theme === 'light') {
+    themeInputs[1].checked = true;
+  }
+} catch (error) {
+  theme = 'light';
+  themeInputs[1].checked = true;
+  console.log(error);
+}
+
+setTheme();
+
+function setTheme() {
+  if (theme === 'dark') {
+    document.body.classList.remove(THEME_LIGHT);
+    document.body.classList.add(THEME_DARK);
+  } else {
+    document.body.classList.remove(THEME_DARK);
+    document.body.classList.add(THEME_LIGHT);
+  }
+  localStorage.setItem('theme', theme);
+}
+
+// create table
+
 const main = document.createElement('main');
 const tableWrapper = document.createElement('div');
 tableWrapper.classList.add('table-wrapper');
@@ -22,6 +100,8 @@ const tbody = document.createElement('tbody');
 table.append(thead, tbody);
 tableWrapper.append(table);
 main.append(tableWrapper);
+
+// data fetching
 
 const title = document.getElementById('title');
 const category = document.getElementById('category');
