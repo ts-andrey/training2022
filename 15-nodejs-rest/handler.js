@@ -7,6 +7,7 @@ const {
 } = require('@aws-sdk/client-dynamodb');
 
 const { marshall, unmarshall } = require('@aws-sdk/util-dynamodb');
+const uuid = require('uuid');
 
 const db = require('./db');
 
@@ -42,8 +43,7 @@ const getUser = async event => {
       Key: marshall({ userId: event.pathParameters.userId }),
     };
     const { Item } = await db.send(new GetItemCommand(params));
-    console.log({ Item });
-
+    
     response.body = JSON.stringify({
       message: 'Successfully retrieved the user! :)',
       data: Item ? unmarshall(Item) : {},
@@ -68,6 +68,7 @@ const createUser = async event => {
 
   try {
     const body = JSON.parse(event.body);
+    body.userId = uuid.v4();
     const params = {
       TableName: process.env.DYNAMODB_TABLE_NAME,
       Item: marshall(body),
