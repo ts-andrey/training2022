@@ -6,7 +6,7 @@
 
 - install java `sdk`;
 - install `serverless`, `serverless-offline`, `serverless-dynamodb-local` (globally);
-- check whether you have or not `.dynamodb` folder in the project ;folder, if not then you should run `sls dynamodb install` command to be able to work with dynamodb locally;
+- check whether you have or not `.dynamodb` folder in the project;folder, if not then you should run `sls dynamodb install` command to be able to work with dynamodb locally;
 - you also need to install required dependencies with help of `npm install` command.
 
 ### to test current api you have to use postman application where you can send following requests:
