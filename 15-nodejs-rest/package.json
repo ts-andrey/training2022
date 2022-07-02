@@ -1,0 +1,17 @@
+{
+  "name": "15-nodejs-rest",
+  "version": "1.0.0",
+  "description": "node.js rest api task",
+  "main": "main.js",
+  "scripts": {
+    "start": "sls offline start"
+  },
+  "author": "Andrei Tsakunou",
+  "license": "ISC",
+  "dependencies": {
+    "@aws-sdk/client-dynamodb": "^3.121.0",
+    "@aws-sdk/util-dynamodb": "^3.121.0",
+    "serverless-iam-roles-per-function": "^3.2.0",
+    "uuid": "^8.3.2"
+  }
+}
