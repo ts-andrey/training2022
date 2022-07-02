@@ -43,7 +43,7 @@ const getUser = async event => {
       Key: marshall({ userId: event.pathParameters.userId }),
     };
     const { Item } = await db.send(new GetItemCommand(params));
-    
+
     response.body = JSON.stringify({
       message: 'Successfully retrieved the user! :)',
       data: Item ? unmarshall(Item) : {},
@@ -78,6 +78,7 @@ const createUser = async event => {
     response.body = JSON.stringify({
       message: 'The user was successfully created! :)',
       createResult,
+      createdUser: body,
     });
   } catch (error) {
     console.log(error);
